@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<title>Texto a Voz</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#b2d0e5" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    @media (max-width: 640px) {
+      .main-mobile-padding { padding-left: 0.5rem; padding-right: 0.5rem; }
+      .footer-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
+      .header-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-50">
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+<header class="sticky top-0 z-10 bg-white shadow-sm header-mobile">
+<div class="mx-auto max-w-md px-4 py-4">
+<h1 class="text-xl font-bold text-slate-800 text-center">Comunicador</h1>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8 main-mobile-padding">
+<section>
+<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
+<span class="material-icons-outlined mr-2 text-blue-500">sentiment_satisfied_alt</span>
+          Emociones
+        </h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_very_satisfied</span>
+<span class="text-sm font-medium text-center">Feliz</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_dissatisfied</span>
+<span class="text-sm font-medium text-center">Triste</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_very_dissatisfied</span>
+<span class="text-sm font-medium text-center">Enojado</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_neutral</span>
+<span class="text-sm font-medium text-center">Sorprendido</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_dissatisfied</span>
+<span class="text-sm font-medium text-center">Asustado</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">sentiment_satisfied</span>
+<span class="text-sm font-medium text-center">Calmado</span>
+</button>
+</div>
+</section>
+<section>
+<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
+<span class="material-icons-outlined mr-2 text-green-500">local_dining</span>
+          Necesidades Básicas
+        </h2>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+<span class="material-icons-outlined text-2xl">restaurant</span>
+<span class="text-sm font-medium">Tengo hambre</span>
+</button>
+<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+<span class="material-icons-outlined text-2xl">help_outline</span>
+<span class="text-sm font-medium">Necesito ayuda</span>
+</button>
+<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+<span class="material-icons-outlined text-2xl">wc</span>
+<span class="text-sm font-medium">Quiero ir al baño</span>
+</button>
+<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+<span class="material-icons-outlined text-2xl">medical_services</span>
+<span class="text-sm font-medium">Necesito un médico</span>
+</button>
+<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+<span class="material-icons-outlined text-2xl">hotel</span>
+<span class="text-sm font-medium">Necesito descansar</span>
+</button>
+</div>
+</section>
+<section>
+<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
+<span class="material-icons-outlined mr-2 text-purple-500">quickreply</span>
+          Respuestas Rápidas
+        </h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">thumb_up_alt</span>
+<span class="text-sm font-medium">Sí</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">thumb_down_alt</span>
+<span class="text-sm font-medium">No</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">check_circle_outline</span>
+<span class="text-sm font-medium">Estoy bien</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">help_outline</span>
+<span class="text-sm font-medium">No sé</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<span class="material-icons text-3xl">thumbs_up_down</span>
+<span class="text-sm font-medium">Tal vez</span>
+</button>
+</div>
+</section>
+</main>
+<footer class="bg-white py-3 border-t border-slate-200">
+  <nav class="flex justify-around items-center px-4 py-2">
+    <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto.html">
+      <span class="material-icons-round">article</span>
+      <span class="text-xs font-medium">Texto</span>
+    </a>
+    <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="frases.html">
+      <span class="material-icons-round">format_quote</span>
+      <span class="text-xs font-medium">Frases</span>
+    </a>
+    <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
+      <span class="material-icons-round">settings</span>
+      <span class="text-xs font-medium">Ajustes</span>
+    </button>
+  </nav>
+  <p class="text-xs text-slate-500 text-center">© 2025 Comunicador App. - Sanba Software - Todos los derechos reservados.</p>
+</footer>
+
+<!-- Modal de selección de voz avanzado -->
+<div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-80 max-w-full">
+    <h2 class="text-lg font-semibold mb-4 text-slate-800 flex items-center gap-2">
+      <span class="material-icons-round text-blue-400">settings_voice</span>
+      Selección de voz
+    </h2>
+    <form id="form-voz" class="flex flex-col gap-3">
+      <div id="lista-voces" class="flex flex-col gap-2"></div>
+    </form>
+    <div class="flex justify-end gap-2 mt-6">
+      <button id="cerrar-ajustes" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  // Registro del service worker para PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+        // Registro exitoso
+      }, function(err) {
+        // Error en el registro
+        console.warn('ServiceWorker registration failed:', err);
+      });
+    });
+  }
+  function getVozPorURI(uri) {
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+  }
+  function hablar(texto) {
+    const vozURI = localStorage.getItem('voz-preferencia-uri');
+    const synth = window.speechSynthesis;
+    function speakWithVoice() {
+      const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = 'es-ES';
+      if (vozElegida) mensaje.voice = vozElegida;
+      synth.speak(mensaje);
+    }
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener('voiceschanged', function handler() {
+        speakWithVoice();
+        synth.removeEventListener('voiceschanged', handler);
+      });
+    } else {
+      speakWithVoice();
+    }
+  }
+  function renderizarVoces() {
+    const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
+    const lista = document.getElementById('lista-voces');
+    lista.innerHTML = '';
+    const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
+    voices.forEach(voz => {
+      let genero = 'Desconocido';
+      const nombre = voz.name.toLowerCase();
+      if (nombre.includes('female') || nombre.includes('mujer') || nombre.includes('paulina') || nombre.includes('soledad')) genero = 'Femenina';
+      else if (nombre.includes('male') || nombre.includes('hombre') || nombre.includes('miguel') || nombre.includes('jorge')) genero = 'Masculina';
+      else if (voz.gender) genero = voz.gender === 'female' ? 'Femenina' : (voz.gender === 'male' ? 'Masculina' : 'Desconocido');
+      lista.innerHTML += `
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="voz" value="${voz.voiceURI}" class="accent-blue-500" ${voz.voiceURI === vozURISeleccionada ? 'checked' : ''} />
+          <span>${voz.name} <span class="text-xs text-gray-500">(${genero})</span></span>
+        </label>
+      `;
+    });
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("button").forEach(boton => {
+      boton.addEventListener("click", () => {
+        const textoSpan = boton.querySelector("span.text-sm");
+        if (textoSpan) {
+          hablar(textoSpan.innerText.trim());
+
+          // Agrega clase de resaltado
+          boton.classList.add("ring-4", "ring-yellow-400", "ring-opacity-60");
+
+          // La remueve después de 600ms
+          setTimeout(() => {
+            boton.classList.remove("ring-4", "ring-yellow-400", "ring-opacity-60");
+          }, 600);
+        }
+      });
+    });
+    // Ajustes de voz
+    const btnAjustes = document.getElementById('btn-ajustes');
+    const modalAjustes = document.getElementById('modal-ajustes');
+    const cerrarAjustes = document.getElementById('cerrar-ajustes');
+    const formVoz = document.getElementById('form-voz');
+    // Mostrar modal
+    btnAjustes.addEventListener('click', () => {
+      renderizarVoces();
+      modalAjustes.classList.remove('hidden');
+    });
+    // Cerrar modal
+    cerrarAjustes.addEventListener('click', () => {
+      modalAjustes.classList.add('hidden');
+    });
+    // Guardar preferencia y probar voz
+    formVoz.addEventListener('change', (e) => {
+      if (e.target.name === 'voz') {
+        localStorage.setItem('voz-preferencia-uri', e.target.value);
+        // Prueba la voz seleccionada
+        hablar('Esta es una voz de ejemplo.');
+      }
+    });
+    window.speechSynthesis.onvoiceschanged = () => {
+      if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
+    };
+    // ...botones reproducir...
+    document.querySelectorAll('.phrase-item').forEach(item => {
+      const boton = item.querySelector('.play-button');
+      const frase = item.querySelector('p')?.innerText.trim();
+      if (boton && frase) {
+        boton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          hablar(frase);
+          boton.classList.add('ring-2', 'ring-blue-400');
+          setTimeout(() => {
+            boton.classList.remove('ring-2', 'ring-blue-400');
+          }, 500);
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
