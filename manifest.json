@@ -1,0 +1,22 @@
+{
+  "name": "AppVoz",
+  "short_name": "AppVoz",
+  "description": "App de síntesis de voz personalizada y frases rápidas.",
+  "start_url": "./home.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b2d0e5",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
