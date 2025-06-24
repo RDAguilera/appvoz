@@ -31,6 +31,22 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  // Cachea fuentes de Google Fonts (iconos y tipografías) para modo offline
+  if (event.request.url.startsWith('https://fonts.gstatic.com/') ||
+      event.request.url.startsWith('https://fonts.googleapis.com/')) {
+    event.respondWith(
+      caches.open('google-fonts').then(cache => {
+        return cache.match(event.request).then(response => {
+          return response || fetch(event.request).then(networkResponse => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        });
+      })
+    );
+    return;
+  }
+  // Resto de recursos: cache normal
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request);
