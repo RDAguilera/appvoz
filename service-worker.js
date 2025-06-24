@@ -1,7 +1,7 @@
 const CACHE_NAME = 'appvoz-cache-v1';
 const urlsToCache = [
   './',
-  './home.html',
+  './index.html',
   './frases.html',
   './texto.html',
   './manifest.json',
