@@ -2,7 +2,7 @@
   "name": "AppVoz",
   "short_name": "AppVoz",
   "description": "App de síntesis de voz personalizada y frases rápidas.",
-  "start_url": "./home.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#b2d0e5",
