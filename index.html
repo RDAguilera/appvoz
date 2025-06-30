@@ -47,29 +47,40 @@
 <span class="material-icons-outlined mr-2 text-blue-500">sentiment_satisfied_alt</span>
           Emociones
         </h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/feliz.png" alt="Feliz" class="w-20 h-20 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Feliz</span>
+<!-- Selector de género antes del grid de emociones -->
+<div class="mb-4 flex gap-4 items-center">
+  <label class="flex items-center gap-1">
+    <input type="radio" name="genero" value="masculino" checked>
+    <span>Masculino</span>
+  </label>
+  <label class="flex items-center gap-1">
+    <input type="radio" name="genero" value="femenino">
+    <span>Femenino</span>
+  </label>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="emociones-grid">
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/alegre.png" alt="Alegre" class="w-28 h-28 object-contain mx-auto" />
+<span class="text-sm font-medium text-center">Alegre</span>
 </button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/triste.png" alt="Triste" class="w-20 h-20 object-contain mx-auto" />
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/triste.png" alt="Triste" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium text-center">Triste</span>
 </button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/enfadado.png" alt="Enfadado" class="w-20 h-20 object-contain mx-auto" />
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/enfadado.png" alt="Enfadado" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium text-center">Enfadado</span>
 </button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/sorprendido.png" alt="Sorprendido" class="w-20 h-20 object-contain mx-auto" />
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/sorprendido.png" alt="Sorprendido" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium text-center">Sorprendido</span>
 </button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/asustado.png" alt="Asustado" class="w-20 h-20 object-contain mx-auto" />
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/asustado.png" alt="Asustado" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium text-center">Asustado</span>
 </button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/desanimado.png" alt="Desanimado" class="w-20 h-20 object-contain mx-auto" />
+<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+<img src="img/emociones/desanimado.png" alt="Desanimado" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium text-center">Desanimado</span>
 </button>
 </div>
@@ -220,6 +231,48 @@
       `;
     });
   }
+  // Selector de género para emociones
+const emociones = {
+  masculino: [
+    { texto: "Alegre", color: "bg-blue-500 hover:bg-blue-600" },
+    { texto: "Triste", color: "bg-blue-500 hover:bg-blue-600" },
+    { texto: "Enfadado", color: "bg-blue-500 hover:bg-blue-600" },
+    { texto: "Sorprendido", color: "bg-blue-500 hover:bg-blue-600" },
+    { texto: "Asustado", color: "bg-blue-500 hover:bg-blue-600" },
+    { texto: "Desanimado", color: "bg-blue-500 hover:bg-blue-600" }
+  ],
+  femenino: [
+    { texto: "Alegre", color: "bg-pink-500 hover:bg-pink-600" },
+    { texto: "Triste", color: "bg-pink-500 hover:bg-pink-600" },
+    { texto: "Enfadada", color: "bg-pink-500 hover:bg-pink-600" },
+    { texto: "Sorprendida", color: "bg-pink-500 hover:bg-pink-600" },
+    { texto: "Asustada", color: "bg-pink-500 hover:bg-pink-600" },
+    { texto: "Desanimada", color: "bg-pink-500 hover:bg-pink-600" }
+  ]
+};
+
+function actualizarEmociones(genero) {
+  const botones = document.querySelectorAll('.btn-emocion');
+  emociones[genero].forEach((emocion, i) => {
+    if (botones[i]) {
+      botones[i].querySelector('span.text-sm').textContent = emocion.texto;
+      botones[i].className = botones[i].className.replace(/bg-\w+-500 hover:bg-\w+-600/g, emocion.color);
+    }
+  });
+}
+
+document.querySelectorAll('input[name="genero"]').forEach(radio => {
+  radio.addEventListener('change', e => {
+    localStorage.setItem('genero-seleccionado', e.target.value); // Guarda la selección
+    actualizarEmociones(e.target.value);
+  });
+});
+
+// Al cargar, recupera la selección guardada (si existe)
+const generoGuardado = localStorage.getItem('genero-seleccionado') || 'masculino';
+document.querySelector(`input[name="genero"][value="${generoGuardado}"]`).checked = true;
+actualizarEmociones(generoGuardado);
+
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("button").forEach(boton => {
       boton.addEventListener("click", () => {
