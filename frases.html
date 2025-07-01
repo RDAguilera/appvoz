@@ -37,12 +37,7 @@
 <body class="bg-slate-50">
 <div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
   <div class="flex-grow overflow-y-auto pb-24">
-    <header class="sticky top-0 z-10 flex items-center bg-white px-4 py-4 pb-3 shadow-sm justify-between w-full max-w-md mx-auto md:max-w-none md:mx-0">
-      <!--button class="text-slate-700 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 active:bg-slate-200">
-        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-          <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-        </svg>
-      </button>-->
+    <header class="sticky top-0 z-10 flex items-center bg-white px-4 py-4 pb-3 shadow-sm justify-between w-full max-w-md mx-auto md:max-w-none md:mx-0">      
       <h1 class="text-slate-900 text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-10">Frases Comunes</h1>
     </header>
     <main class="px-4 pt-6 w-full max-w-md mx-auto md:max-w-none md:mx-0 md:px-16">
@@ -167,7 +162,7 @@
       </a>
       <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto.html">
         <span class="material-icons-round">article</span>
-        <span class="text-xs font-medium">Texto</span>
+        <span class="text-xs font-medium">Habla/Escucha</span>
       </a>
       <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
         <span class="material-icons-round">settings</span>
@@ -177,35 +172,49 @@
     <div class="h-safe-area-bottom bg-white"></div> 
   </footer>
 
-  <!-- Modal de selección de voz avanzado -->
+  <!-- Modal de ajustes avanzado -->
   <div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
     <div class="bg-white rounded-xl shadow-lg p-6 w-80 max-w-full">
       <h2 class="text-lg font-semibold mb-4 text-slate-800 flex items-center gap-2">
         <span class="material-icons-round text-blue-400">settings_voice</span>
-        Selección de voz
+        Ajustes de usuario
       </h2>
-      <form id="form-voz" class="flex flex-col gap-3">
-        <div id="lista-voces" class="flex flex-col gap-2"></div>
+      <form id="form-ajustes" class="flex flex-col gap-4">
+        <!-- Nombre -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1" for="nombre-usuario">Nombre</label>
+          <input type="text" id="nombre-usuario" class="form-input w-full rounded-md border-gray-300" placeholder="Tu nombre" />
+        </div>
+        <!-- Género -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Género</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-1">
+              <input type="radio" name="genero-ajustes" value="masculino">
+              <span>Masculino</span>
+            </label>
+            <label class="flex items-center gap-1">
+              <input type="radio" name="genero-ajustes" value="femenino">
+              <span>Femenino</span>
+            </label>
+          </div>
+        </div>
+        <!-- Voz -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Voz</label>
+          <div id="lista-voces" class="flex flex-col gap-2"></div>
+        </div>
+        <div class="flex justify-end gap-2 mt-4">
+          <button id="cerrar-ajustes" type="button" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
+          <button type="submit" class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 font-medium">Guardar</button>
+        </div>
       </form>
-      <div class="flex justify-end gap-2 mt-6">
-        <button id="cerrar-ajustes" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
-      </div>
     </div>
   </div>
 </div>
 
 <script>
-  // Registro del service worker para PWA
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-        // Registro exitoso
-      }, function(err) {
-        // Error en el registro
-        console.warn('ServiceWorker registration failed:', err);
-      });
-    });
-  }
+  // Utilidad para obtener la voz seleccionada por voiceURI
   function getVozPorURI(uri) {
     const voices = window.speechSynthesis.getVoices();
     return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
@@ -229,9 +238,11 @@
       speakWithVoice();
     }
   }
+  // --- Ajustes de usuario: voz, género y nombre ---
   function renderizarVoces() {
     const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
     const lista = document.getElementById('lista-voces');
+    if (!lista) return;
     lista.innerHTML = '';
     const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
     voices.forEach(voz => {
@@ -268,50 +279,52 @@
       }
     });
 
-    // Ajustes de voz
+    // Modal y ajustes
     const btnAjustes = document.getElementById('btn-ajustes');
     const modalAjustes = document.getElementById('modal-ajustes');
     const cerrarAjustes = document.getElementById('cerrar-ajustes');
-    const formVoz = document.getElementById('form-voz');
-    // Mostrar modal
-    btnAjustes.addEventListener('click', () => {
-      renderizarVoces();
-      modalAjustes.classList.remove('hidden');
-    });
-    // Cerrar modal
-    cerrarAjustes.addEventListener('click', () => {
-      modalAjustes.classList.add('hidden');
-    });
-    formVoz.addEventListener('change', (e) => {
-      if (e.target.name === 'voz') {
-        localStorage.setItem('voz-preferencia-uri', e.target.value);
-        hablar('Esta es una voz de ejemplo.');
-      }
-    });
-    window.speechSynthesis.onvoiceschanged = () => {
-      if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
-    };
-    // ...botones reproducir y borrar...
-    const textarea = document.querySelector("textarea");
-    const btnReproducir = document.getElementById("btn-reproducir");
-    const btnBorrar = document.getElementById("btn-borrar");
-    if (btnReproducir) {
-      btnReproducir.addEventListener("click", () => {
-        const texto = textarea.value.trim();
-        if (texto !== "") {
-          hablar(texto);
-          btnReproducir.classList.add("ring-2", "ring-blue-400");
-          setTimeout(() => {
-            btnReproducir.classList.remove("ring-2", "ring-blue-400");
-          }, 500);
+    const formAjustes = document.getElementById('form-ajustes');
+    const inputNombre = document.getElementById('nombre-usuario');
+    const listaVoces = document.getElementById('lista-voces');
+
+    // Asegura que los elementos existen antes de asignar eventos
+    if (btnAjustes && modalAjustes && cerrarAjustes && formAjustes && inputNombre && listaVoces) {
+      btnAjustes.addEventListener('click', () => {
+        renderizarVoces();
+        inputNombre.value = localStorage.getItem('nombre-usuario') || '';
+        const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
+        const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
+        if (radioGenero) radioGenero.checked = true;
+        modalAjustes.classList.remove('hidden');
+      });
+
+      cerrarAjustes.addEventListener('click', () => {
+        modalAjustes.classList.add('hidden');
+      });
+
+      formAjustes.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nombre = inputNombre.value.trim();
+        localStorage.setItem('nombre-usuario', nombre);
+        const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
+        localStorage.setItem('genero-seleccionado', genero);
+        const voz = document.querySelector('input[name="voz"]:checked');
+        if (voz) {
+          localStorage.setItem('voz-preferencia-uri', voz.value);
+        }
+        modalAjustes.classList.add('hidden');
+      });
+
+      listaVoces.addEventListener('change', (e) => {
+        if (e.target.name === 'voz') {
+          localStorage.setItem('voz-preferencia-uri', e.target.value);
+          hablar('Esta es una voz de ejemplo.');
         }
       });
-    }
-    if (btnBorrar) {
-      btnBorrar.addEventListener("click", () => {
-        window.speechSynthesis.cancel();
-        textarea.value = "";
-      });
+
+      window.speechSynthesis.onvoiceschanged = () => {
+        if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
+      };
     }
   });
 </script>

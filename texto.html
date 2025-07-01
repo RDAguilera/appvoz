@@ -94,19 +94,43 @@
     <div class="h-safe-area-bottom bg-white"></div> 
   </footer>
 
-  <!-- Modal de selección de voz avanzado -->
+  <!-- Modal de ajustes avanzado -->
   <div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
     <div class="bg-white rounded-xl shadow-lg p-6 w-80 max-w-full">
       <h2 class="text-lg font-semibold mb-4 text-slate-800 flex items-center gap-2">
         <span class="material-icons-round text-blue-400">settings_voice</span>
-        Selección de voz
+        Ajustes de usuario
       </h2>
-      <form id="form-voz" class="flex flex-col gap-3">
-        <div id="lista-voces" class="flex flex-col gap-2"></div>
+      <form id="form-ajustes" class="flex flex-col gap-4">
+        <!-- Nombre -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1" for="nombre-usuario">Nombre</label>
+          <input type="text" id="nombre-usuario" class="form-input w-full rounded-md border-gray-300" placeholder="Tu nombre" />
+        </div>
+        <!-- Género -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Género</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-1">
+              <input type="radio" name="genero-ajustes" value="masculino">
+              <span>Masculino</span>
+            </label>
+            <label class="flex items-center gap-1">
+              <input type="radio" name="genero-ajustes" value="femenino">
+              <span>Femenino</span>
+            </label>
+          </div>
+        </div>
+        <!-- Voz -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Voz</label>
+          <div id="lista-voces" class="flex flex-col gap-2"></div>
+        </div>
+        <div class="flex justify-end gap-2 mt-4">
+          <button id="cerrar-ajustes" type="button" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
+          <button type="submit" class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 font-medium">Guardar</button>
+        </div>
       </form>
-      <div class="flex justify-end gap-2 mt-6">
-        <button id="cerrar-ajustes" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
-      </div>
     </div>
   </div>
 </div>
@@ -138,14 +162,14 @@
     }
   }
 
-  // Renderiza la lista de voces en español en el modal
+  // --- Ajustes de usuario: voz, género y nombre ---
   function renderizarVoces() {
     const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
     const lista = document.getElementById('lista-voces');
+    if (!lista) return;
     lista.innerHTML = '';
     const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
     voices.forEach(voz => {
-      // Deducción simple de género por nombre
       let genero = 'Desconocido';
       const nombre = voz.name.toLowerCase();
       if (nombre.includes('female') || nombre.includes('mujer') || nombre.includes('paulina') || nombre.includes('soledad')) genero = 'Femenina';
@@ -161,108 +185,125 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    // --- FUNCIONALIDAD DE BOTONES PRINCIPALES ---
     const textarea = document.querySelector("textarea");
     const btnReproducir = document.getElementById("btn-reproducir");
     const btnBorrar = document.getElementById("btn-borrar");
-    // Ajustes de voz
-    const btnAjustes = document.getElementById('btn-ajustes');
-    const modalAjustes = document.getElementById('modal-ajustes');
-    const cerrarAjustes = document.getElementById('cerrar-ajustes');
-    const formVoz = document.getElementById('form-voz');
-    // Mostrar modal y renderizar voces
-    btnAjustes.addEventListener('click', () => {
-      renderizarVoces();
-      modalAjustes.classList.remove('hidden');
-    });
-    // Cerrar modal
-    cerrarAjustes.addEventListener('click', () => {
-      modalAjustes.classList.add('hidden');
-    });
-    // Guardar preferencia y probar voz
-    formVoz.addEventListener('change', (e) => {
-      if (e.target.name === 'voz') {
-        localStorage.setItem('voz-preferencia-uri', e.target.value);
-        hablar('Esta es una voz de ejemplo.');
-      }
-    });
-    // Si las voces cambian (por ejemplo, al cargar), volver a renderizar si el modal está abierto
-    window.speechSynthesis.onvoiceschanged = () => {
-      if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
-    };
-    if (btnReproducir) {
+    const btnEscuchar = document.getElementById("btn-escuchar");
+    const transcripcion = document.getElementById("transcripcion");
+    let reconocimiento;
+    let escuchando = false;
+
+    // Botón Reproducir
+    if (btnReproducir && textarea) {
       btnReproducir.addEventListener("click", () => {
         const texto = textarea.value.trim();
-        if (texto !== "") {
+        if (texto) {
           hablar(texto);
-          btnReproducir.classList.add("ring-2", "ring-blue-400");
-          setTimeout(() => {
-            btnReproducir.classList.remove("ring-2", "ring-blue-400");
-          }, 500);
         }
       });
     }
-    if (btnBorrar) {
+
+    // Botón Borrar
+    if (btnBorrar && textarea) {
       btnBorrar.addEventListener("click", () => {
-        window.speechSynthesis.cancel();
         textarea.value = "";
       });
     }
-  });
-  // Registro del service worker para PWA
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-        // Registro exitoso
-      }, function(err) {
-        // Error en el registro
-        console.warn('ServiceWorker registration failed:', err);
-      });
-    });
-  }
 
-    // Reconocimiento de voz
-  const btnEscuchar = document.getElementById('btn-escuchar');
-  const transcripcionDiv = document.getElementById('transcripcion');
-  let recognition;
-  let escuchando = false;
-  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    recognition = new SpeechRecognition();
-    recognition.lang = 'es-ES';
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.onresult = function(event) {
-      let texto = '';
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
-        texto += event.results[i][0].transcript;
-      }
-      transcripcionDiv.textContent = texto;
+    // Botón Escuchar (Reconocimiento de voz)
+    if (btnEscuchar && transcripcion) {
+      btnEscuchar.addEventListener("click", () => {
+        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+          alert("Tu navegador no soporta reconocimiento de voz.");
+          return;
+        }
+        if (!reconocimiento) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          reconocimiento = new SpeechRecognition();
+          reconocimiento.lang = "es-ES";
+          reconocimiento.continuous = false;
+          reconocimiento.interimResults = false;
+          reconocimiento.onresult = function(event) {
+            const resultado = event.results[0][0].transcript;
+            transcripcion.textContent = resultado;            
+          };
+          reconocimiento.onend = function() {
+            escuchando = false;
+            btnEscuchar.querySelector("#escuchar-label").textContent = "Escuchar";
+          };
+        }
+        if (!escuchando) {
+          reconocimiento.start();
+          escuchando = true;
+          btnEscuchar.querySelector("#escuchar-label").textContent = "Detener";
+        } else {
+          reconocimiento.stop();
+          escuchando = false;
+          btnEscuchar.querySelector("#escuchar-label").textContent = "Escuchar";
+        }
+      });
+    }
+
+    // --- AJUSTES DE USUARIO ---
+    const btnAjustes = document.getElementById('btn-ajustes');
+    const modalAjustes = document.getElementById('modal-ajustes');
+    const cerrarAjustes = document.getElementById('cerrar-ajustes');
+    const formAjustes = document.getElementById('form-ajustes');
+    const inputNombre = document.getElementById('nombre-usuario');
+
+    // Mostrar modal y cargar valores guardados
+    if (btnAjustes) {
+      btnAjustes.addEventListener('click', () => {
+        renderizarVoces();
+        if (inputNombre) inputNombre.value = localStorage.getItem('nombre-usuario') || '';
+        const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
+        const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
+        if (radioGenero) radioGenero.checked = true;
+        modalAjustes.classList.remove('hidden');
+      });
+    }
+
+    // Cerrar modal
+    if (cerrarAjustes) {
+      cerrarAjustes.addEventListener('click', () => {
+        modalAjustes.classList.add('hidden');
+      });
+    }
+
+    // Guardar ajustes al enviar el formulario
+    if (formAjustes) {
+      formAjustes.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (inputNombre) {
+          const nombre = inputNombre.value.trim();
+          localStorage.setItem('nombre-usuario', nombre);
+        }
+        const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
+        localStorage.setItem('genero-seleccionado', genero);
+        const voz = document.querySelector('input[name="voz"]:checked');
+        if (voz) {
+          localStorage.setItem('voz-preferencia-uri', voz.value);
+        }
+        modalAjustes.classList.add('hidden');
+      });
+    }
+
+    // Probar voz al cambiar
+    const listaVoces = document.getElementById('lista-voces');
+    if (listaVoces) {
+      listaVoces.addEventListener('change', (e) => {
+        if (e.target.name === 'voz') {
+          localStorage.setItem('voz-preferencia-uri', e.target.value);
+          hablar('Esta es una voz de ejemplo.');
+        }
+      });
+    }
+
+    window.speechSynthesis.onvoiceschanged = () => {
+      if (modalAjustes && !modalAjustes.classList.contains('hidden')) renderizarVoces();
     };
-    // Manejo de errores explícito para depuración
-    recognition.onerror = function(event) {
-      transcripcionDiv.textContent = 'Error: ' + event.error;
-      console.error('Reconocimiento de voz error:', event.error);
-    };
-    recognition.onend = function() {
-      escuchando = false;
-      btnEscuchar.classList.remove('bg-blue-200');
-      document.getElementById('escuchar-label').textContent = 'Escuchar';
-    };
-    btnEscuchar.addEventListener('click', () => {
-      if (!escuchando) {
-        recognition.start();
-        escuchando = true;
-        btnEscuchar.classList.add('bg-blue-200');
-        document.getElementById('escuchar-label').textContent = 'Detener';
-      } else {
-        recognition.stop();
-      }
-    });
-  } else {
-    btnEscuchar.disabled = true;
-    btnEscuchar.textContent = 'No soportado';
-    transcripcionDiv.textContent = 'El reconocimiento de voz no es compatible con este navegador.';
-  }
+  });
 </script>
 </body>
 </html>

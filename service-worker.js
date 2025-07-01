@@ -1,6 +1,5 @@
-const CACHE_NAME = 'appvoz-cache-v3';
-const urlsToCache = [
-  './',
+const CACHE_NAME = 'appvoz-cache-v4';
+const urlsToCache = [  
   './index.html',
   './frases.html',
   './texto.html',

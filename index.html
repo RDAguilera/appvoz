@@ -14,50 +14,30 @@
 <meta name="theme-color" content="#b2d0e5" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-    @media (max-width: 640px) {
-      .main-mobile-padding { padding-left: 0.5rem; padding-right: 0.5rem; }
-      .footer-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
-      .header-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+  body {
+    min-height: max(884px, 100dvh);
+  }
+  @media (max-width: 640px) {
+    .main-mobile-padding { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .footer-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .header-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
+  }
+</style>
 <body class="bg-slate-50">
 <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>
 <header class="sticky top-0 z-10 bg-white shadow-sm header-mobile">
 <div class="mx-auto max-w-md px-4 py-4">
-<h1 class="text-xl font-bold text-slate-800 text-center">Comunicador</h1>
+<h1 class="text-xl font-bold text-slate-800 text-center">
+  Comunicador <span id="saludo-nombre" class="font-normal text-base"></span>
+</h1>
 </div>
 </header>
-<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8 main-mobile-padding">
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8 main-mobile-padding pb-28">
 <section>
 <h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
 <span class="material-icons-outlined mr-2 text-blue-500">sentiment_satisfied_alt</span>
           Emociones
         </h2>
-<!-- Selector de género antes del grid de emociones -->
-<div class="mb-4 flex gap-4 items-center">
-  <label class="flex items-center gap-1">
-    <input type="radio" name="genero" value="masculino" checked>
-    <span>Masculino</span>
-  </label>
-  <label class="flex items-center gap-1">
-    <input type="radio" name="genero" value="femenino">
-    <span>Femenino</span>
-  </label>
-</div>
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="emociones-grid">
 <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
 <img src="img/emociones/alegre.png" alt="Alegre" class="w-28 h-28 object-contain mx-auto" />
@@ -120,24 +100,30 @@
         </h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<span class="material-icons text-3xl">thumb_up_alt</span>
+<!--<span class="material-icons text-3xl">thumb_up_alt</span>-->
+<img src="img/respuestas/sí.png" alt="Sí" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium">Sí</span>
 </button>
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<span class="material-icons text-3xl">thumb_down_alt</span>
+<img src="img/respuestas/no.png" alt="No" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium">No</span>
 </button>
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<span class="material-icons text-3xl">check_circle_outline</span>
+<img src="img/respuestas/estoy bien.png" alt="Estoy bien" class="w-28 h-28 object-contain mx-auto" />
 <span class="text-sm font-medium">Estoy bien</span>
 </button>
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<span class="material-icons text-3xl">help_outline</span>
-<span class="text-sm font-medium">No sé</span>
+<img src="img/respuestas/no lo sé.png" alt="No lo sé" class="w-28 h-28 object-contain mx-auto" />
+<span class="text-sm font-medium">No lo sé</span>
 </button>
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<span class="material-icons text-3xl">thumbs_up_down</span>
-<span class="text-sm font-medium">Tal vez</span>
+<img src="img/respuestas/ayuda.png" alt="Ayuda" class="w-28 h-28 object-contain mx-auto" />
+<span class="text-sm font-medium">Ayuda</span>
+</button>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+<img src="img/respuestas/gracias.png" alt="Gracias" class="w-28 h-28 object-contain mx-auto" />
+<span class="text-sm font-medium">Gracias</span>
 </button>
 </div>
 </section>
@@ -146,7 +132,7 @@
   <nav class="flex justify-around items-center px-4 py-2">
     <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto.html">
       <span class="material-icons-round">article</span>
-      <span class="text-xs font-medium">Texto</span>
+      <span class="text-xs font-medium">Habla/Escucha</span>
     </a>
     <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="frases.html">
       <span class="material-icons-round">format_quote</span>
@@ -157,22 +143,47 @@
       <span class="text-xs font-medium">Ajustes</span>
     </button>
   </nav>
-  <p class="text-xs text-slate-500 text-center">© 2025 Comunicador App. - Sanba Software - Todos los derechos reservados.</p>
+  <div class="h-safe-area-bottom bg-white"></div>
+  <p class="text-xs text-slate-500 text-center">© 2025 Sanba Voz App. - Sanba Software - Todos los derechos reservados.</p>
 </footer>
 
-<!-- Modal de selección de voz avanzado -->
+<!-- Modal de ajustes avanzado -->
 <div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
   <div class="bg-white rounded-xl shadow-lg p-6 w-80 max-w-full">
     <h2 class="text-lg font-semibold mb-4 text-slate-800 flex items-center gap-2">
       <span class="material-icons-round text-blue-400">settings_voice</span>
-      Selección de voz
+      Ajustes de usuario
     </h2>
-    <form id="form-voz" class="flex flex-col gap-3">
-      <div id="lista-voces" class="flex flex-col gap-2"></div>
+    <form id="form-ajustes" class="flex flex-col gap-4">
+      <!-- Nombre -->
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1" for="nombre-usuario">Nombre</label>
+        <input type="text" id="nombre-usuario" class="form-input w-full rounded-md border-gray-300" placeholder="Tu nombre" />
+      </div>
+      <!-- Género -->
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Género</label>
+        <div class="flex gap-4">
+          <label class="flex items-center gap-1">
+            <input type="radio" name="genero-ajustes" value="masculino">
+            <span>Masculino</span>
+          </label>
+          <label class="flex items-center gap-1">
+            <input type="radio" name="genero-ajustes" value="femenino">
+            <span>Femenino</span>
+          </label>
+        </div>
+      </div>
+      <!-- Voz -->
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">Voz</label>
+        <div id="lista-voces" class="flex flex-col gap-2"></div>
+      </div>
+      <div class="flex justify-end gap-2 mt-4">
+        <button id="cerrar-ajustes" type="button" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
+        <button type="submit" class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 font-medium">Guardar</button>
+      </div>
     </form>
-    <div class="flex justify-end gap-2 mt-6">
-      <button id="cerrar-ajustes" class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cerrar</button>
-    </div>
   </div>
 </div>
 </div>
@@ -189,6 +200,7 @@
       });
     });
   }
+
   function getVozPorURI(uri) {
     const voices = window.speechSynthesis.getVoices();
     return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
@@ -212,9 +224,12 @@
       speakWithVoice();
     }
   }
+
+  // --- Ajustes de usuario: voz, género y nombre ---
   function renderizarVoces() {
     const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
     const lista = document.getElementById('lista-voces');
+    if (!lista) return;
     lista.innerHTML = '';
     const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
     voices.forEach(voz => {
@@ -231,103 +246,144 @@
       `;
     });
   }
-  // Selector de género para emociones
-const emociones = {
-  masculino: [
-    { texto: "Alegre", color: "bg-blue-500 hover:bg-blue-600" },
-    { texto: "Triste", color: "bg-blue-500 hover:bg-blue-600" },
-    { texto: "Enfadado", color: "bg-blue-500 hover:bg-blue-600" },
-    { texto: "Sorprendido", color: "bg-blue-500 hover:bg-blue-600" },
-    { texto: "Asustado", color: "bg-blue-500 hover:bg-blue-600" },
-    { texto: "Desanimado", color: "bg-blue-500 hover:bg-blue-600" }
-  ],
-  femenino: [
-    { texto: "Alegre", color: "bg-pink-500 hover:bg-pink-600" },
-    { texto: "Triste", color: "bg-pink-500 hover:bg-pink-600" },
-    { texto: "Enfadada", color: "bg-pink-500 hover:bg-pink-600" },
-    { texto: "Sorprendida", color: "bg-pink-500 hover:bg-pink-600" },
-    { texto: "Asustada", color: "bg-pink-500 hover:bg-pink-600" },
-    { texto: "Desanimada", color: "bg-pink-500 hover:bg-pink-600" }
-  ]
-};
 
-function actualizarEmociones(genero) {
-  const botones = document.querySelectorAll('.btn-emocion');
-  emociones[genero].forEach((emocion, i) => {
-    if (botones[i]) {
-      botones[i].querySelector('span.text-sm').textContent = emocion.texto;
-      botones[i].className = botones[i].className.replace(/bg-\w+-500 hover:bg-\w+-600/g, emocion.color);
-    }
-  });
-}
-
-document.querySelectorAll('input[name="genero"]').forEach(radio => {
-  radio.addEventListener('change', e => {
-    localStorage.setItem('genero-seleccionado', e.target.value); // Guarda la selección
-    actualizarEmociones(e.target.value);
-  });
-});
-
-// Al cargar, recupera la selección guardada (si existe)
-const generoGuardado = localStorage.getItem('genero-seleccionado') || 'masculino';
-document.querySelector(`input[name="genero"][value="${generoGuardado}"]`).checked = true;
-actualizarEmociones(generoGuardado);
-
+  // Unificación de ajustes y saludo
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("button").forEach(boton => {
-      boton.addEventListener("click", () => {
-        const textoSpan = boton.querySelector("span.text-sm");
-        if (textoSpan) {
-          hablar(textoSpan.innerText.trim());
+    // Saludo personalizado
+    const saludo = document.getElementById('saludo-nombre');
+    const nombre = localStorage.getItem('nombre-usuario');
+    if (saludo && nombre) saludo.textContent = `- Hola, ${nombre}!`;
 
-          // Agrega clase de resaltado
-          boton.classList.add("ring-4", "ring-yellow-400", "ring-opacity-60");
-
-          // La remueve después de 600ms
-          setTimeout(() => {
-            boton.classList.remove("ring-4", "ring-yellow-400", "ring-opacity-60");
-          }, 600);
-        }
-      });
-    });
-    // Ajustes de voz
+    // Modal y ajustes
     const btnAjustes = document.getElementById('btn-ajustes');
     const modalAjustes = document.getElementById('modal-ajustes');
     const cerrarAjustes = document.getElementById('cerrar-ajustes');
-    const formVoz = document.getElementById('form-voz');
-    // Mostrar modal
-    btnAjustes.addEventListener('click', () => {
-      renderizarVoces();
-      modalAjustes.classList.remove('hidden');
-    });
+    const formAjustes = document.getElementById('form-ajustes');
+    const inputNombre = document.getElementById('nombre-usuario');
+
+    // Mostrar modal y cargar valores guardados
+    if (btnAjustes) {
+      btnAjustes.addEventListener('click', () => {
+        renderizarVoces();
+        // Nombre
+        if (inputNombre) inputNombre.value = localStorage.getItem('nombre-usuario') || '';
+        // Género
+        const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
+        const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
+        if (radioGenero) radioGenero.checked = true;
+        // Voz ya se selecciona en renderizarVoces
+        modalAjustes.classList.remove('hidden');
+      });
+    }
+
     // Cerrar modal
-    cerrarAjustes.addEventListener('click', () => {
-      modalAjustes.classList.add('hidden');
-    });
-    // Guardar preferencia y probar voz
-    formVoz.addEventListener('change', (e) => {
-      if (e.target.name === 'voz') {
-        localStorage.setItem('voz-preferencia-uri', e.target.value);
-        // Prueba la voz seleccionada
-        hablar('Esta es una voz de ejemplo.');
+    if (cerrarAjustes) {
+      cerrarAjustes.addEventListener('click', () => {
+        modalAjustes.classList.add('hidden');
+      });
+    }
+
+    // Guardar ajustes al enviar el formulario
+    if (formAjustes) {
+      formAjustes.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Nombre
+        if (inputNombre) {
+          const nombre = inputNombre.value.trim();
+          localStorage.setItem('nombre-usuario', nombre);
+          // Saludo personalizado si existe
+          const saludo = document.getElementById('saludo-nombre');
+          if (saludo) saludo.textContent = nombre ? `- Hola, ${nombre}!` : '';
+        }
+        // Género
+        const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
+        localStorage.setItem('genero-seleccionado', genero);
+        if (typeof actualizarEmociones === 'function') {
+          actualizarEmociones(genero);
+        }
+        // Voz
+        const voz = document.querySelector('input[name="voz"]:checked');
+        if (voz) {
+          localStorage.setItem('voz-preferencia-uri', voz.value);
+        }
+        modalAjustes.classList.add('hidden');
+      });
+    }
+
+    // Probar voz al cambiar
+    const listaVoces = document.getElementById('lista-voces');
+    if (listaVoces) {
+      listaVoces.addEventListener('change', (e) => {
+        if (e.target.name === 'voz') {
+          localStorage.setItem('voz-preferencia-uri', e.target.value);
+          hablar('Esta es una voz de ejemplo.');
+        }
+      });
+    }
+
+    window.speechSynthesis.onvoiceschanged = () => {
+      if (modalAjustes && !modalAjustes.classList.contains('hidden')) renderizarVoces();
+    };
+
+    // Al cargar, aplica género guardado (si tienes radios de género fuera del modal)
+    const generoGuardado = localStorage.getItem('genero-seleccionado') || 'masculino';
+    const radioGenero = document.querySelector(`input[name="genero"][value="${generoGuardado}"]`);
+    if (radioGenero) radioGenero.checked = true;
+    if (typeof actualizarEmociones === 'function') {
+      actualizarEmociones(generoGuardado);
+    }
+  });
+
+  // Recupera el cambio dinámico de emociones según género guardado en localStorage
+  const emociones = {
+    masculino: [
+      { texto: "Alegre", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "Triste", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "Enfadado", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "Sorprendido", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "Asustado", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "Desanimado", color: "bg-blue-500 hover:bg-blue-600" }
+    ],
+    femenino: [
+      { texto: "Alegre", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "Triste", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "Enfadada", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "Sorprendida", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "Asustada", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "Desanimada", color: "bg-pink-500 hover:bg-pink-600" }
+    ]
+  };
+
+  function actualizarEmociones(genero) {
+    const botones = document.querySelectorAll('.btn-emocion');
+    emociones[genero].forEach((emocion, i) => {
+      if (botones[i]) {
+        botones[i].querySelector('span.text-sm').textContent = emocion.texto;
+        botones[i].className = botones[i].className.replace(/bg-\w+-500 hover:bg-\w+-600/g, emocion.color);
       }
     });
-    window.speechSynthesis.onvoiceschanged = () => {
-      if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
-    };
-    // ...botones reproducir...
-    document.querySelectorAll('.phrase-item').forEach(item => {
-      const boton = item.querySelector('.play-button');
-      const frase = item.querySelector('p')?.innerText.trim();
-      if (boton && frase) {
-        boton.addEventListener('click', (e) => {
-          e.stopPropagation();
-          hablar(frase);
-          boton.classList.add('ring-2', 'ring-blue-400');
-          setTimeout(() => {
-            boton.classList.remove('ring-2', 'ring-blue-400');
-          }, 500);
-        });
+  }
+
+  // --- ASIGNACIÓN DE EVENTOS PARA TEXTO A VOZ ---
+  document.addEventListener("DOMContentLoaded", () => {
+    // Botones de emociones
+    document.querySelectorAll('.btn-emocion').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const texto = btn.querySelector('span.text-sm').textContent;
+        hablar(texto);
+      });
+    });
+
+    // Botones de necesidades básicas y respuestas rápidas
+    document.querySelectorAll('.grid button').forEach(btn => {
+      // Evita duplicar en emociones
+      if (!btn.classList.contains('btn-emocion')) {
+        const texto = btn.querySelector('span.text-sm')?.textContent;
+        if (texto) {
+          btn.addEventListener('click', () => {
+            hablar(texto);
+          });
+        }
       }
     });
   });
