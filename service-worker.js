@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appvoz-cache-v4';
+const CACHE_NAME = 'appvoz-cache-v5';
 const urlsToCache = [  
   './index.html',
   './frases.html',
