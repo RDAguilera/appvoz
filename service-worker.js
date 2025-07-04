@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appvoz-cache-v6';
+const CACHE_NAME = 'appvoz-cache-v7';
 const urlsToCache = [  
   './index.html',
   './frases.html',
@@ -30,9 +30,18 @@ const urlsToCache = [
   './img/respuestas/sí.png',
   './img/respuestas/no.png',
   './img/respuestas/estoy bien.png',
-  './img/respuestas/no lo sé.png',
-  './img/respuestas/ayuda.png',
-  './img/respuestas/gracias.png'
+  './img/respuestas/no lo sé.png',  
+  './img/respuestas/gracias.png',
+  
+  './img/necesidades/ayuda.png',
+  './img/necesidades/médico.png',
+  './img/necesidades/hambre.png',
+  './img/necesidades/descansar.png',
+  './img/necesidades/baños.png',
+   
+  './img/frases.png',
+  './img/ajustes.png',
+  './img/texto-a-voz.png'
 ];
 
 self.addEventListener('install', event => {
