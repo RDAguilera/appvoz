@@ -1,4 +1,4 @@
-const CACHE_NAME = 'appvoz-cache-v5';
+const CACHE_NAME = 'appvoz-cache-v6';
 const urlsToCache = [  
   './index.html',
   './frases.html',
@@ -9,7 +9,30 @@ const urlsToCache = [
   'https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900',
   'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined',
   'https://fonts.googleapis.com/icon?family=Material+Icons+Round',
-  'https://cdn.tailwindcss.com?plugins=forms,container-queries'
+  'https://cdn.tailwindcss.com?plugins=forms,container-queries',
+  // Agrega aquí todas las imágenes y recursos locales usados en la app:
+  './img/emociones/alegre.png',
+  './img/emociones/triste.png',
+  './img/emociones/enfadado.png',
+  './img/emociones/sorprendido.png',
+  './img/emociones/asustado.png',
+  './img/emociones/desanimado.png',
+  './img/familiares/mamá.png',
+  './img/familiares/papá.png',
+  './img/familiares/hermana.png',
+  './img/familiares/hermano.png',
+  './img/familiares/abuela.png',
+  './img/familiares/abuelo.png',
+  './img/familiares/tía.png',
+  './img/familiares/tío.png',
+  './img/familiares/prima.png',
+  './img/familiares/primo.png',
+  './img/respuestas/sí.png',
+  './img/respuestas/no.png',
+  './img/respuestas/estoy bien.png',
+  './img/respuestas/no lo sé.png',
+  './img/respuestas/ayuda.png',
+  './img/respuestas/gracias.png'
 ];
 
 self.addEventListener('install', event => {

@@ -1,6 +1,6 @@
 {
-  "name": "AppVoz",
-  "short_name": "AppVoz",
+  "name": "Sanba Voz",
+  "short_name": "SanbaVoz",
   "description": "App de síntesis de voz personalizada y frases rápidas.",
   "start_url": "./index.html",
   "display": "standalone",
