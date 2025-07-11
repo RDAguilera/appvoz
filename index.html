@@ -32,144 +32,212 @@
 </h1>
 </div>
 </header>
-<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8 main-mobile-padding pb-28">
-<section>
-<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
-  <!--<span class="material-icons-outlined mr-2 text-blue-500">sentiment_satisfied_alt</span>-->
-  <img src="img/emociones/alegre.png" alt="Emociones" class="w-7 h-7 object-contain mr-2" />
-  Emociones
-</h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="emociones-grid">
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/alegre.png" alt="Alegre" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Alegre</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/triste.png" alt="Triste" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Triste</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/enfadado.png" alt="Enfadado" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Enfadado</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/sorprendido.png" alt="Sorprendido" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Sorprendido</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/asustado.png" alt="Asustado" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Asustado</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-<img src="img/emociones/desanimado.png" alt="Desanimado" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Desanimado</span>
-</button>
-</div>
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-2 main-mobile-padding pb-28">
+<!-- Cambia cada sección por un bloque desplegable -->
+<!-- Emociones -->
+<section class="mb-4">
+  <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-blue-100 text-blue-700 font-semibold text-lg mb-3 transition hover:bg-blue-200 focus:outline-none" data-toggle="collapse" data-target="#panel-emociones">
+    <span class="flex items-center">
+      <img src="img/emociones/alegre.png" alt="Emociones" class="w-10 h-10 object-contain mr-2" />
+      Emociones
+    </span>
+    <span class="material-icons-round transition-transform" id="icon-emociones">expand_more</span>
+  </button>
+  <div id="panel-emociones" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="emociones-grid">
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/alegre.png" alt="Alegre" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Alegre</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/triste.png" alt="Triste" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Triste</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/enfadado.png" alt="Enfadado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Enfadado</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/sorprendido.png" alt="Sorprendido" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Sorprendido</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/asustado.png" alt="Asustado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Asustado</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/desanimado.png" alt="Desanimado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">Desanimado</span>
+      </button>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
-  <img src="img/familiares/familia.png" alt="Familia" class="w-10 h-10 object-contain mr-2" />
-  Familiares
-</h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="emociones-grid">
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/mamá.png" alt="Mamá" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Mamá</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/papá.png" alt="Papá" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Papá</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/hermana.png" alt="Hermana" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Hermana</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/hermano.png" alt="Hermano" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Hermano</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/abuela.png" alt="Abuela" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Abuela</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/abuelo.png" alt="Abuelo" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Abuelo</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/tía.png" alt="Tía" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Tía</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/tío.png" alt="Tío" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Tío</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/prima.png" alt="Prima" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Prima</span>
-</button>
-<button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
-<img src="img/familiares/primo.png" alt="Primo" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium text-center">Primo</span>
-</button>
-</div>
+<!-- Familiares -->
+<section class="mb-4">
+  <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-yellow-100 text-yellow-700 font-semibold text-lg mb-3 transition hover:bg-yellow-200 focus:outline-none" data-toggle="collapse" data-target="#panel-familiares">
+    <span class="flex items-center">
+      <img src="img/familiares/familia.png" alt="Familia" class="w-10 h-10 object-contain mr-2" />
+      Familiares, Personas
+    </span>
+    <span class="material-icons-round transition-transform" id="icon-familiares">expand_more</span>
+  </button>
+  <div id="panel-familiares" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/familia.png" alt="Familia" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">FAMILIA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/mamá.png" alt="mamá" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">MAMÁ</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/papá.png" alt="Papá" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">PAPÁ</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/hermana.png" alt="Hermana" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">HERMANA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/hermano.png" alt="Hermano" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">HERMANO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/abuelos.png" alt="Abuelos" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ABUELOS</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/abuela.png" alt="Abuela" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ABUELA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/abuelo.png" alt="Abuelo" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ABUELO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/tía.png" alt="Tía" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">TÍA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/tío.png" alt="Tío" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">TÍO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/prima.png" alt="Prima" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">PRIMA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/primo.png" alt="Primo" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">PRIMO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/persona.png" alt="persona" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">PERSONA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/yo.png" alt="yo" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">YO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/yo.png" alt="tú" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">TÚ</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/él.png" alt="él" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ÉL</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/ella.png" alt="ella" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ELLA</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/ellas.png" alt="ellas" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ELLAS</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/ellos.png" alt="ellos" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ELLOS</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/nosotras.png" alt="nosotras" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">NOSOTRAS</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-yellow-300 hover:bg-yellow-400 text-black p-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+        <img src="img/familiares/nosotros.png" alt="nosotros" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">NOSOTROS</span>
+      </button>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
-<img src="img/necesidades/necesidades.png" alt="Necesidades Basicas" class="w-10 h-10 object-contain mr-2" />
-          Necesidades Básicas
-        </h2>
-<div class="grid grid-cols-1 gap-3">
-<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
-<img src="img/necesidades/hambre.png" alt="Tengo hambre" class="w-10 h-10 object-contain mr-2" />
-<span class="text-sm font-medium">Tengo hambre</span>
-</button>
-<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
-<img src="img/necesidades/ayuda.png" alt="Necesito ayuda" class="w-10 h-10 object-contain mr-2" />
-<span class="text-sm font-medium">Necesito ayuda</span>
-</button>
-<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
-<img src="img/necesidades/baños.png" alt="Quiero ir al baño" class="w-10 h-10 object-contain mr-2" />
-<span class="text-sm font-medium">Quiero ir al baño</span>
-</button>
-<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
-<img src="img/necesidades/médico.png" alt="Necesito un médico" class="w-10 h-10 object-contain mr-2" />
-<span class="text-sm font-medium">Necesito un médico</span>
-</button>
-<button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
-<img src="img/necesidades/descansar.png" alt="Necesito descansar" class="w-10 h-10 object-contain mr-2" />
-<span class="text-sm font-medium">Necesito descansar</span>
-</button>
-</div>
+<!-- Necesidades Básicas -->
+<section class="mb-4">
+  <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-green-100 text-green-700 font-semibold text-lg mb-3 transition hover:bg-green-200 focus:outline-none" data-toggle="collapse" data-target="#panel-necesidades">
+    <span class="flex items-center">
+      <img src="img/necesidades/necesidades.png" alt="Necesidades Básicas" class="w-10 h-10 object-contain mr-2" />
+      Necesidades Básicas
+    </span>
+    <span class="material-icons-round transition-transform" id="icon-necesidades">expand_more</span>
+  </button>
+  <div id="panel-necesidades" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+    <div class="grid grid-cols-1 gap-3">
+      <button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/hambre.png" alt="Tengo hambre" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-sm font-medium">Tengo hambre</span>
+      </button>
+      <button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/ayuda.png" alt="Necesito ayuda" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-sm font-medium">Necesito ayuda</span>
+      </button>
+      <button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/baños.png" alt="Quiero ir al baño" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-sm font-medium">Quiero ir al baño</span>
+      </button>
+      <button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/médico.png" alt="Necesito un médico" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-sm font-medium">Necesito un médico</span>
+      </button>
+      <button class="flex items-center justify-start gap-3 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/descansar.png" alt="Necesito descansar" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-sm font-medium">Necesito descansar</span>
+      </button>
+    </div>
+  </div>
 </section>
-<section>
-<h2 class="text-lg font-semibold text-slate-700 mb-3 flex items-center">
-<img src="img/respuestas/respuesta.png" alt="Respuestas rápidas" class="w-10 h-10 object-contain mr-2" />
-          Respuestas Rápidas
-        </h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/respuestas/sí.png" alt="Sí" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">Sí</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/respuestas/no.png" alt="No" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">No</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/respuestas/estoy bien.png" alt="Estoy bien" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">Estoy bien</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/respuestas/no lo sé.png" alt="No lo sé" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">No lo sé</span>
-</button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/necesidades/ayuda.png" alt="Ayuda" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">Ayuda</span>
-</button>
+
+<!-- Respuestas Rápidas -->
+<section class="mb-4">
+  <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-purple-100 text-purple-700 font-semibold text-lg mb-3 transition hover:bg-purple-200 focus:outline-none" data-toggle="collapse" data-target="#panel-respuestas">
+    <span class="flex items-center">
+      <img src="img/respuestas/respuesta.png" alt="Respuestas rápidas" class="w-10 h-10 object-contain mr-2" />
+      Respuestas Rápidas
+    </span>
+    <span class="material-icons-round transition-transform" id="icon-respuestas">expand_more</span>
+  </button>
+  <div id="panel-respuestas" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/sí.png" alt="Sí" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">Sí</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/no.png" alt="No" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">No</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/estoy bien.png" alt="Estoy bien" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">Estoy bien</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/no lo sé.png" alt="No lo sé" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">No lo sé</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/necesidades/ayuda.png" alt="Ayuda" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">Ayuda</span>
+      </button>
 </button>
 <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
 <img src="img/respuestas/gracias.png" alt="Gracias" class="w-28 h-28 object-contain mx-auto" />
@@ -435,6 +503,28 @@
           });
         }
       }
+    });
+  });
+
+  // Desplegables de secciones
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('[data-toggle="collapse"]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = document.querySelector(this.getAttribute('data-target'));
+        const icon = this.querySelector('.material-icons-round');
+        if (target) {
+          if (target.style.maxHeight && target.style.maxHeight !== "0px") {
+            target.style.maxHeight = "0";
+            if (icon) icon.style.transform = '';
+          } else {
+            target.style.maxHeight = target.scrollHeight + "px";
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        }
+      });
+      // Inicialmente colapsar
+      const target = document.querySelector(btn.getAttribute('data-target'));
+      if (target) target.style.maxHeight = "0";
     });
   });
 </script>
