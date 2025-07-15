@@ -49,15 +49,19 @@
   </label>
   <!-- Botones Reproducir y Borrar -->
   <div class="flex gap-2 mt-2">
-    <button id="btn-reproducir" class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 font-semibold shadow transition">
-      <span class="material-icons-round">volume_up</span>
-      Reproducir
-    </button>
-    <button id="btn-borrar" class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-red-100 text-red-700 hover:bg-red-200 font-semibold shadow transition">
-      <span class="material-icons-round">delete</span>
-      Borrar
-    </button>
-  </div>
+  <button id="btn-playpause" class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 font-semibold shadow transition">
+    <span class="material-icons-round" id="icon-playpause">play_arrow</span>
+    <span id="label-playpause">Reproducir</span>
+  </button>
+  <button id="btn-detener" class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-red-100 text-red-700 hover:bg-red-200 font-semibold shadow transition">
+    <span class="material-icons-round">stop</span>
+    Detener
+  </button>
+  <button id="btn-borrar" class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold shadow transition">
+    <span class="material-icons-round">delete</span>
+    Borrar
+  </button>
+</div>
   <!-- Área de transcripción de voz -->
   <div>
     <div class="flex items-center gap-2 mb-1">
@@ -222,7 +226,7 @@
           const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
           reconocimiento = new SpeechRecognition();
           reconocimiento.lang = "es-ES";
-          reconocimiento.continuous = false;
+          reconocimiento.continuous = true;
           reconocimiento.interimResults = false;
           reconocimiento.onresult = function(event) {
             const resultado = event.results[0][0].transcript;
@@ -303,6 +307,74 @@
     window.speechSynthesis.onvoiceschanged = () => {
       if (modalAjustes && !modalAjustes.classList.contains('hidden')) renderizarVoces();
     };
+
+    const btnPlayPause = document.getElementById("btn-playpause");
+const btnDetener = document.getElementById("btn-detener");
+let reproduciendo = false;
+let pausado = false;
+let utterance = null;
+
+if (btnPlayPause && textarea) {
+  btnPlayPause.addEventListener("click", () => {
+    const synth = window.speechSynthesis;
+    const texto = textarea.value.trim();
+
+    // Si está pausado, reanuda
+    if (pausado) {
+      synth.resume();
+      pausado = false;
+      reproduciendo = true;
+      btnPlayPause.querySelector('#icon-playpause').textContent = "pause";
+      btnPlayPause.querySelector('#label-playpause').textContent = "Pausar";
+      return;
+    }
+
+    // Si está reproduciendo, pausa
+    if (reproduciendo) {
+      synth.pause();
+      pausado = true;
+      reproduciendo = false;
+      btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+      btnPlayPause.querySelector('#label-playpause').textContent = "Reanudar";
+      return;
+    }
+
+    // Si no está reproduciendo ni pausado, inicia la reproducción
+    if (texto) {
+      synth.cancel(); // Detiene cualquier reproducción previa
+      utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      const vozURI = localStorage.getItem('voz-preferencia-uri');
+      const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+      if (vozElegida) utterance.voice = vozElegida;
+
+      utterance.onstart = () => {
+        reproduciendo = true;
+        pausado = false;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "pause";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Pausar";
+      };
+      utterance.onend = utterance.onerror = () => {
+        reproduciendo = false;
+        pausado = false;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Reproducir";
+      };
+
+      synth.speak(utterance);
+    }
+  });
+}
+
+if (btnDetener) {
+  btnDetener.addEventListener("click", () => {
+    window.speechSynthesis.cancel();
+    reproduciendo = false;
+    pausado = false;
+    btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+    btnPlayPause.querySelector('#label-playpause').textContent = "Reproducir";
+  });
+}
   });
 </script>
 </body>
