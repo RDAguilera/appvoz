@@ -32,6 +32,26 @@
 </h1>
 </div>
 </header>
+
+<!-- Banda deslizable de instituciones con efecto de barrido -->
+<div id="instituciones-barra" class="w-full bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 shadow-sm overflow-hidden transition-all duration-300" style="max-height:0;">
+  <div class="flex gap-3 items-center px-2 py-2 overflow-x-auto">
+    <a href="carson/comunicador_educativo.html" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white hover:bg-indigo-50 shadow transition whitespace-nowrap min-w-max">
+      <img src="img/logo/LogoSinFondo.png" alt="Instituto Carson" class="w-8 h-8 object-contain rounded border border-indigo-200" />
+      <span class="font-semibold text-indigo-700 text-sm">Instituto Carson</span>
+      <span class="material-icons-round text-indigo-400 text-base">arrow_forward</span>
+    </a>
+    <!-- Puedes agregar más instituciones aquí -->
+  </div>
+</div>
+<!-- Botón para mostrar/ocultar la banda -->
+<div class="flex justify-start px-2 py-1">
+  <button id="btn-toggle-instituciones" class="flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold shadow transition">
+    <span class="material-icons-round" id="icon-toggle-instituciones">expand_more</span>
+    <span class="text-sm">Instituciones</span>
+  </button>
+</div>
+
 <main class="flex-1 overflow-y-auto px-4 py-6 space-y-2 main-mobile-padding pb-28">
 <!-- Cambia cada sección por un bloque desplegable -->
 <!-- Emociones -->
@@ -527,6 +547,25 @@
       if (target) target.style.maxHeight = "0";
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const barra = document.getElementById("instituciones-barra");
+  const btnToggle = document.getElementById("btn-toggle-instituciones");
+  const iconToggle = document.getElementById("icon-toggle-instituciones");
+  let abierto = false;
+
+  btnToggle.addEventListener("click", () => {
+    if (!abierto) {
+      barra.style.maxHeight = barra.scrollHeight + "px";
+      iconToggle.style.transform = "rotate(180deg)";
+      abierto = true;
+    } else {
+      barra.style.maxHeight = "0";
+      iconToggle.style.transform = "";
+      abierto = false;
+    }
+  });
+});
 </script>
 
 </body>

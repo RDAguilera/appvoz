@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Comunicador Educativo para facilitar la comunicación en el aula. Incluye saludos, emociones, espacios escolares y más."/>
+  <title>Comunicador Educativo</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+</head>
+<body class="bg-slate-50 font-sans">
+  
+  <header class="bg-white shadow p-4 flex items-center justify-center gap-4">
+    <img src="../img/logo/LogoSinFondo.png" alt="Logo" class="w-10 h-10 object-contain" />
+    <h1 class="font-bold text-xl text-slate-800">INSTITUTO CARSON</h1>
+  </header>
+
+  <main class="p-4 space-y-4 overflow-y-auto pb-28">
+<section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-saludos">
+        <span class="flex items-center">
+            <img src="../img/saludos/saludo.png" alt="SALUDOS" class="w-10 h-10 object-contain mr-2" />
+            SALUDOS
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-saludos">expand_more</span>
+    </button>
+    
+<div id="panel-saludos" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/buenos días.png" alt="BUEN DÍA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">BUEN DÍA</span>
+        </button>
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/buenas tardes.png" alt="BUENAS TARDES" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">BUENAS TARDES</span>
+        </button>
+
+         <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/buenas noches.png" alt="BUENAS NOCHES" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">BUENAS NOCHES</span>
+        </button>       
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/hola.png" alt="HOLA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">HOLA</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/¿cómo estás.png" alt="¿CÓMO ESTÁS?" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">¿CÓMO ESTÁS?</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/hasta luego.png" alt="HASTA LUEGO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">HASTA LUEGO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/¿cómo te va.png" alt="CÓMO TE VA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">CÓMO TE VA</span>
+        </button>
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/adiós.png" alt="ADIÓS" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">ADIÓS</span>
+        </button>
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/saludos/chocar los cinco.png" alt="CHOCAR LOS 5" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">CHOCAR LOS CINCO</span>
+        </button>
+       
+        </div>
+</div>
+</section><section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-emociones-sentimientos">
+        <span class="flex items-center">
+            <img src="../img/emociones/alegre.png" alt="EMOCIONES / SENTIMIENTOS" class="w-10 h-10 object-contain mr-2" />
+            EMOCIONES / SENTIMIENTOS
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-emociones-/-sentimientos">expand_more</span>
+    </button>
+    
+<div id="panel-emociones-sentimientos" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/alegre.png" alt="CONTENTO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">CONTENTO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/triste.png" alt="TRISTE" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">TRISTE</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/enfadado.png" alt="ENOJADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">ENOJADO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/asustado.png" alt="ASUSTADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">ASUSTADO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/feliz.png" alt="FELIZ" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">FELIZ</span>
+        </button>
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/emociones/sorprendido.png" alt="SORPRENDIDO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SORPRENDIDO</span>
+        </button>
+        </div>
+</div>
+</section><section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-salas">
+        <span class="flex items-center">
+            <img src="../img/espacios_escuela/aula.png" alt="SALAS" class="w-10 h-10 object-contain mr-2" />
+            SALAS
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-salas">expand_more</span>
+    </button>
+    
+<div id="panel-salas" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula.png" alt="SALA DE 3" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SALA DE 3</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula.png" alt="SALA DE 4" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SALA DE 4</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula.png" alt="SALA DE 5" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SALA DE 5</span>
+        </button>        
+       
+        </div>
+</div>
+</section><section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-grados">
+        <span class="flex items-center">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="GRADOS" class="w-10 h-10 object-contain mr-2" />
+            GRADOS
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-grados">expand_more</span>
+    </button>
+    
+<div id="panel-grados" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+         <a href="primer_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="PRIMER GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">PRIMER GRADO</span>
+        </a>
+        
+         <a href="segundo_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="SEGUNDO GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SEGUNDO GRADO</span>
+        </a>
+        
+         <a href="tercer_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="TERCER GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">TERCER GRADO</span>
+        </a>      
+        
+        <a href="cuarto_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="CUARTO GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">CUARTO GRADO</span>
+        </a>
+
+         <a href="quinto_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="QUINTO GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">QUINTO GRADO</span>
+        </a>
+        
+         <a href="sexto_grado.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/espacios_escuela/aula-grado.png" alt="CUARTO GRADO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SEXTO GRADO</span>
+        </a>
+        </div>
+</div>
+</section><section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-personal">
+        <span class="flex items-center">
+            <img src="../img/personal_escuela/personas.png" alt="PERSONAL" class="w-10 h-10 object-contain mr-2" />
+            PERSONAL
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-personal">expand_more</span>
+    </button>
+    
+<div id="panel-personal" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/maestra.png" alt="SEÑO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">SEÑO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/profesor.png" alt="PROFE" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">PROFE</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/directora.png" alt="DIRECTORA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">DIRECTORA</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/conservación_mantenimiento.png" alt="PERSONA DE MANTENIMIENTO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">PERSONA DE MANTENIMIENTO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/maestranza.png" alt="PRECEPTORA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">PRECEPTORA</span>
+        </button>
+
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/personal_escuela/integrador.png" alt="INTEGRADORA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">INTEGRADORA</span>
+        </button>
+        </div>
+</div>
+</section><section class='mb-4'>
+
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-asistencia-necesidades">
+        <span class="flex items-center">
+            <img src="../img/necesidades/necesidades.png" alt="ASISTENCIA / NECESIDADES" class="w-10 h-10 object-contain mr-2" />
+            ASISTENCIA / NECESIDADES
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-asistencia-/-necesidades">expand_more</span>
+    </button>
+    
+<div id="panel-asistencia-necesidades" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/necesidades/baños.png" alt="NECESITO IR AL BAÑO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">NECESITO IR AL BAÑO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/necesidades/beber_agua.png" alt="NECESITO AGUA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">NECESITO AGUA</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/necesidades/estoy mal.png" alt=ESTOY MAL" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">ESTOY MAL</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/necesidades/tener frío.png" alt="TENGO FRÍO" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">TENGO FRÍO</span>
+        </button>
+        
+        <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+            <img src="../img/necesidades/ayuda.png" alt="NECESITO AYUDA" class="w-20 h-20 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">NECESITO AYUDA</span>
+        </button>
+        </div>
+</div>
+</section>
+  </main>
+  <footer class="fixed bottom-0 left-0 bg-white border-t border-gray-200 shadow-t-sm w-full text-center text-sm text-gray-500 py-2">
+    © 2025 Sanba Voz App - Uso Educativo
+  </footer>
+
+  <script>
+    function hablar(texto) {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = 'es-ES';
+      window.speechSynthesis.speak(mensaje);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // texto a voz
+      document.querySelectorAll('button span.text-sm').forEach(span => {
+        span.parentElement.addEventListener('click', () => {
+          hablar(span.textContent);
+        });
+      });
+      // colapsar secciones
+      document.querySelectorAll('[data-toggle="collapse"]').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const target = document.querySelector(this.getAttribute('data-target'));
+          const icon = this.querySelector('.material-icons-round');
+          if (target.style.maxHeight && target.style.maxHeight !== "0px") {
+            target.style.maxHeight = "0";
+            icon.style.transform = '';
+          } else {
+            target.style.maxHeight = target.scrollHeight + "px";
+            icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
