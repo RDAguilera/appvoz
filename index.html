@@ -22,6 +22,14 @@
     .footer-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
     .header-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
   }
+  img {
+    filter: none !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    img {
+      filter: none !important;
+    }
+  }
 </style>
 <body class="bg-slate-50">
 <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>
@@ -114,7 +122,7 @@
             </button>
 
             <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
-                <img src="img/saludos/adiós.png" alt="ADIÓS" class="w-20 h-20 object-contain mx-auto" />
+                <img src="img/saludos/adiós.png" alt="ADIÓS" class="w-28 h-28 object-contain mx-auto" />
                 <span class="text-sm font-medium text-center">ADIÓS</span>
             </button>
 
