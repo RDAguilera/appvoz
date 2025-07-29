@@ -136,7 +136,277 @@
         </div>
     </div>
 </section>
+
 <section class='mb-4'>
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-espacios">
+        <span class="flex items-center">
+            <img src="../img/espacios_escuela/espacios.png" alt="ESPACIOS ESCOLARES" class="w-10 h-10 object-contain mr-2" />
+            ESPACIOS ESCOLARES
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-espacios">expand_more</span>
+    </button>
+
+    <div id="panel-espacios" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <a href="aula.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/espacios_escuela/aula.png" alt="AULA" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">AULA</span>
+            </a>
+            
+            <a href="patio.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/escuela/recreo.png" alt="PATIO" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">PATIO</span>
+            </a>
+            
+            <a href="comedor.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/espacios_escuela/sum.png" alt="SUM" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">SUM</span>
+            </a>
+            
+            <a href="biblioteca.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/espacios_escuela/biblioteca.png" alt="BIBLIOTECA" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">BIBLIOTECA</span>
+            </a>
+            <a href="baños.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/espacios_escuela/baños.png" alt="BAÑOS" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">BAÑOS</span>
+            </a>
+            <a href="secretaria.html" class="flex flex-col items-center justify-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-4 py-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50">
+                <img src="../img/espacios_escuela/dirección.png" alt="DIRECCIÓN" class="w-20 h-20 object-contain mx-auto" />
+                <span class="text-sm font-medium text-center">DIRECCIÓN</span>
+            </a>            
+        </div>
+    </div>
+</section>
+<section class='mb-4'>  
+    <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-materiales">
+        <span class="flex items-center">
+            <img src="../img/escuela/material escolar.png" alt="MATERIALES" class="w-10 h-10 object-contain mr-2" />
+            MATERIALES/ASIGNATURAS
+        </span>
+        <span class="material-icons-round transition-transform" id="icon-materiales">expand_more</span>
+    </button>
+
+    <div id="panel-materiales" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('LIBRO')">
+        <img src="../img/escuela/libro.png" alt="SALA" class="w-20 h-20 object-contain mb-2" />
+        <span>LIBRO</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CUADERNO')">
+        <img src="../img/escuela/cuaderno.png" alt="SALA" class="w-20 h-20 object-contain mb-2" />
+        CUADERNO
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('LÁPIZ')">
+        <img src="../img/escuela/lápiz.png" alt="SALA" class="w-20 h-20 object-contain mb-2" />
+        LÁPIZ
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CRAYONES')">
+        <img src="../img/escuela/pinturas.png" alt="CRAYONES" class="w-20 h-20 object-contain mb-2" />
+        <span>CRAYONES</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('LAPICERA')">
+        <img src="../img/escuela/bolígrafo.png" alt="LAPICERA" class="w-20 h-20 object-contain mb-2" />
+        <span>LAPICERA</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('HOJAS')">
+        <img src="../img/escuela/papeles.png" alt="HOJAS" class="w-20 h-20 object-contain mb-2" />
+        <span>HOJAS</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('SACAPUNTAS')">
+        <img src="../img/escuela/sacapuntas.png" alt="SACAPUNTAS" class="w-20 h-20 object-contain mb-2" />
+        <span>SACAPUNTAS</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('MESA')">
+        <img src="../img/escuela/mesa de colegio.png" alt="MESA" class="w-20 h-20 object-contain mb-2" />
+        <span>MESA</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('SILLA')">
+        <img src="../img/escuela/silla de colegio.png" alt="SILLA" class="w-20 h-20 object-contain mb-2" />
+        <span>SILLA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PIZARRON')">
+        <img src="../img/escuela/pizarrón.png" alt="PIZARRÓN" class="w-20 h-20 object-contain mb-2" />
+        <span>PIZARRÓN</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CARPETA')">
+        <img src="../img/escuela/carpeta con anillos.png" alt="CARPETA" class="w-20 h-20 object-contain mb-2" />
+        <span>CARPETA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('BORRADOR')">
+        <img src="../img/escuela/borrador.png" alt="BORRADOR" class="w-20 h-20 object-contain mb-2" />
+        <span>BORRADOR</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('REGLA')">
+        <img src="../img/escuela/regla.png" alt="REGLA" class="w-20 h-20 object-contain mb-2" />
+        <span>REGLA</span>    
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('ESCUADRA')">
+        <img src="../img/escuela/escuadra.png" alt="ESCUADRA" class="w-20 h-20 object-contain mb-2" />
+        <span>ESCUADRA</span>    
+      </button>
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('ROTULO')">
+        <img src="../img/escuela/etiqueta.png" alt="ROTULO" class="w-20 h-20 object-contain mb-2" />
+        <span>ROTULO</span>    
+      </button>
+        <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('TIZA')">
+            <img src="../img/escuela/tiza.png" alt="TIZA" class="w-20 h-20 object-contain mb-2" />
+            <span>TIZA</span>
+        </button>
+        <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('RESALTADOR')">
+            <img src="../img/escuela/rotulador.png" alt="RESALTADOR" class="w-20 h-20 object-contain mb-2" />
+            <span>RESALTADOR</span>
+        </button>   
+        <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PLASTILINA')">
+            <img src="../img/escuela/plastilina.png" alt="PLASTILINA" class="w-20 h-20 object-contain mb-2" />
+            <span>PLASTILINA</span>
+        </button> 
+        
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('TIJERA')">
+        <img src="../img/escuela/tijeras.png" alt="TIJERA" class="w-20 h-20 object-contain mb-2" />
+        <span>TIJERA</span>        
+      </button>   
+      
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PLASTICOLA')">
+        <img src="../img/escuela/cola.png" alt="PLASTICOLA" class="w-20 h-20 object-contain mb-2" />
+        <span>PLASTICOLA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('GOMA')">
+        <img src="../img/escuela/goma.png" alt="GOMA" class="w-20 h-20 object-contain mb-2" />
+        <span>GOMA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('TEMPERA')">
+        <img src="../img/escuela/témperas.png" alt="TÉMPERA" class="w-20 h-20 object-contain mb-2" />
+        <span>TEMPERA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PINTURA')">
+        <img src="../img/escuela/pintura.png" alt="PINTURA" class="w-20 h-20 object-contain mb-2" />
+        <span>PINTURA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PINCEL')">
+        <img src="../img/escuela/pincel.png" alt="PINCEL" class="w-20 h-20 object-contain mb-2" />
+        <span>PINCEL</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CARTULINA')">
+        <img src="../img/escuela/cartulina.png" alt="CARTULINA" class="w-20 h-20 object-contain mb-2" />
+        <span>CARTULINA</span>        
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PAPEL')">
+        <img src="../img/escuela/papel.png" alt="PAPEL" class="w-20 h-20 object-contain mb-2" />
+        <span>PAPEL</span>  
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CARTUCHERA')">
+        <img src="../img/escuela/cartuchera.png" alt="CARTUCHERA" class="w-20 h-20 object-contain mb-2" />
+        <span>CARTUCHERA</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('MOCHILA')">
+        <img src="../img/escuela/mochila.png" alt="MOCHILA" class="w-20 h-20 object-contain mb-2" />
+        <span>MOCHILA</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CUENTO')">
+        <img src="../img/escuela/cuento.png" alt="CUENTO" class="w-20 h-20 object-contain mb-2" />
+        <span>CUENTO</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('LENGUA')">
+        <img src="../img/escuela/clase de lengua y literatura.png" alt="LENGUA" class="w-20 h-20 object-contain mb-2" />
+        <span>LENGUA</span> 
+      </button> 
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('MATEMÁTICA')">
+        <img src="../img/escuela/clase de matemáticas.png" alt="MATEMÁTICA" class="w-20 h-20 object-contain mb-2" />
+        <span>MATEMÁTICA</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CIENCIAS SOCIALES')">
+        <img src="../img/escuela/ciencias sociales.png" alt="CIENCIAS SOCIALES" class="w-20 h-20 object-contain mb-2" />
+        <span>CIENCIAS SOCIALES</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('CIENCIAS NATURALES')">
+        <img src="../img/escuela/naturales.png" alt="CIENCIAS NATURALES" class="w-20 h-20 object-contain mb-2" />
+        <span>CIENCIAS NATURALES</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('ARTE')">
+        <img src="../img/escuela/arte.png" alt="ARTE" class="w-20 h-20 object-contain mb-2" />
+        <span>ARTE</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('EDUCACIÓN FÍSICA')">
+        <img src="../img/escuela/educación física.png" alt="EDUCACIÓN FÍSICA" class="w-20 h-20 object-contain mb-2" />
+        <span>EDUCACIÓN FÍSICA</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('MÚSICA')">
+        <img src="../img/escuela/clase de música.png" alt="MÚSICA" class="w-20 h-20 object-contain mb-2" />
+        <span>MÚSICA</span>   
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('TECNOLOGÍA')">
+        <img src="../img/escuela/clase de tecnología.png" alt="TECNOLOGÍA" class="w-20 h-20 object-contain mb-2" />
+        <span>TECNOLOGÍA</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('INGLÉS')">
+        <img src="../img/escuela/inglés.png" alt="INGLÉS" class="w-20 h-20 object-contain mb-2" />
+        <span>INGLÉS</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('RECREO')">
+        <img src="../img/escuela/recreo.png" alt="RECREO" class="w-20 h-20 object-contain mb-2" />
+        <span>RECREO</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('YO SOY')">
+        <img src="../img/escuela/yo soy.png" alt="YO SOY" class="w-20 h-20 object-contain mb-2" />
+        <span>YO SOY</span>
+      </button>
+      
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('PROYECTO')">
+        <img src="../img/escuela/proyecto.png" alt="PROYECTO" class="w-20 h-20 object-contain mb-2" />
+        <span>PROYECTO</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('EFEMERIDES')">
+        <img src="../img/escuela/calendario.png" alt="EFEMÉRIDES" class="w-20 h-20 object-contain mb-2" />
+        <span>EFEMÉRIDES</span> 
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('GEOMETRÍA')">
+        <img src="../img/escuela/clase de geometría.png" alt="GEOMETRÍA" class="w-20 h-20 object-contain mb-2" />
+        <span>GEOMETRÍA</span>
+      </button>
+
+      <button class="rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white p-6 shadow-md transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 text-lg font-medium text-center flex flex-col items-center justify-center" onclick="hablar('SUSTENTABILIDAD')">
+        <img src="../img/escuela/huerta.png" alt="SUSTENTABILIDAD" class="w-20 h-20 object-contain mb-2" />
+        <span>SUSTENTABILIDAD</span>
+      </button>
+
+</section>
+<!--<section class='mb-4'>
 
     <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-salas">
         <span class="flex items-center">
@@ -209,7 +479,7 @@
             </a>
         </div>
     </div>
-</section>
+</section>-->
 <section class='mb-4'>
 
     <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-indigo-100 text-indigo-700 font-semibold text-lg mb-3 transition hover:bg-indigo-200 focus:outline-none" data-toggle="collapse" data-target="#panel-personal">
