@@ -571,12 +571,32 @@
 </footer>
 
 <script>
-    function hablar(texto) {
+  function hablar(texto) {
+    const synth = window.speechSynthesis;
+    const vozURI = localStorage.getItem('voz-preferencia-uri');
+    let vozElegida = null;
+    // Esperar a que las voces estén cargadas
+    function speak() {
+      if (vozURI) {
+        vozElegida = synth.getVoices().find(v => v.voiceURI === vozURI);
+      }
+      if (!vozElegida) {
+        vozElegida = synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0];
+      }
       const mensaje = new SpeechSynthesisUtterance(texto);
       mensaje.lang = 'es-ES';
-      window.speechSynthesis.speak(mensaje);
+      if (vozElegida) mensaje.voice = vozElegida;
+      synth.speak(mensaje);
     }
-
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener('voiceschanged', function handler() {
+        speak();
+        synth.removeEventListener('voiceschanged', handler);
+      });
+    } else {
+      speak();
+    }
+  }
     document.addEventListener("DOMContentLoaded", () => {
       // texto a voz
       document.querySelectorAll('button span.text-sm').forEach(span => {
