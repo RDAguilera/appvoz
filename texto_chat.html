@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Texto</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    .nav-item-active {
+      color: #b2d0e5;font-weight: 700;
+    }
+    .nav-item-active svg {
+      fill: #b2d0e5;
+    }
+  </style>
+<style>
+  @media (max-width: 640px) {
+    .label-boton {
+      display: none;
+    }
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#b2d0e5" />
+</head>
+
+<body class="bg-slate-50">
+<header class="sticky top-0 z-10 flex items-center bg-white px-4 py-4 shadow-sm justify-between w-full w-full">
+  <h1 class="text-slate-900 text-xl font-bold text-center flex-1 pr-10">Habla y Escucha</h1>
+  <div class="flex items-center gap-2">
+    <span class="text-sm font-medium">TEXTO</span>
+    <label class="inline-flex relative items-center cursor-pointer">
+      <input type="checkbox" id="modo-toggle" class="sr-only peer">
+      <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 after:content-[''] after:absolute after:left-[2px] after:top-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+    </label>
+    <span class="text-sm font-medium">CHAT</span>
+  </div>
+</header>
+
+<main class="flex-1 w-full  w-full px-4 pt-4 pb-24 overflow-y-auto">
+  <div id="modoTexto" class="flex flex-col gap-4">
+    <label class="flex flex-col">
+      <span class="flex items-center gap-2 text-sm font-medium text-[#6a7781] mb-1">
+        <span class="material-icons-round text-blue-400">edit</span>
+        Escribe tu mensaje
+      </span>
+      <!--<textarea id="texto" class="form-input w-full resize-none rounded-xl border border-gray-300 bg-[#f1f2f4] p-4 min-h-[6rem] text-base placeholder:text-[#6a7781]"></textarea>-->
+      <textarea id="texto" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121516] focus:outline-none focus:ring-2 focus:ring-[#b2d0e5] border border-gray-300 bg-[#f1f2f4] focus:border-[#b2d0e5] min-h-48 placeholder:text-[#6a7781] p-4 text-base font-normal leading-normal shadow-sm" placeholder="Escribe tu mensaje aquí..."></textarea>
+    </label>
+    <!-- Botones Reproducir y Borrar -->
+    <div class="flex flex-row gap-2 mt-2">
+      <button id="btn-playpause" class="flex-1 flex items-center justify-center gap-2 px-2 py-2 rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 font-semibold shadow transition min-w-0">
+        <span class="material-icons-round" id="icon-playpause">play_arrow</span>
+        <span id="label-playpause" class="label-boton">Reproducir</span>
+      </button>
+      <button id="btn-detener" class="flex-1 flex items-center justify-center gap-2 px-2 py-2 rounded-md bg-red-100 text-red-700 hover:bg-red-200 font-semibold shadow transition min-w-0">
+        <span class="material-icons-round">stop</span>
+        <span class="label-boton">Detener</span>
+      </button>
+      <button id="btn-borrar" class="flex-1 flex items-center justify-center gap-2 px-2 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold shadow transition min-w-0">
+        <span class="material-icons-round">delete</span>
+        <span class="label-boton">Borrar</span>
+      </button>
+  </div>
+    <!-- Área de transcripción de voz -->
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-icons-round text-blue-400">mic</span>
+        <span class="text-sm font-medium text-[#6a7781]">Transcripción en vivo</span>
+        <button id="btn-escuchar" class="ml-auto px-4 py-2 rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 font-medium flex items-center gap-1">
+          <span class="material-icons-round">hearing</span>
+          <span id="escuchar-label">Escuchar</span>
+        </button>
+      </div>
+      <!--<div id="transcripcion" class="form-input w-full rounded-xl border border-blue-200 bg-blue-50 p-4 min-h-[6rem] shadow-inner text-base"></div>-->
+      <div id="transcripcion" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121516] border border-blue-200 bg-blue-50 min-h-48 p-4 text-base font-normal leading-normal shadow-inner"></div>
+    </div>
+  </div>
+  <div id="modoChat" class="hidden flex flex-col gap-4">
+    <div class="flex justify-end">
+      <button id="btn-borrar-historial" class="flex items-center gap-1 px-3 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">
+        <span class="material-icons-round">delete</span>
+        <span class="label-boton">Borrar historial</span>
+      </button>
+    </div>
+    <div id="chat-box" class="flex flex-col gap-2 max-h-96 overflow-y-auto p-2 bg-white rounded-md shadow-inner border"></div>
+    <div class="flex gap-2">
+      <button id="btn-mic" class="px-4 py-2 bg-blue-100 text-blue-700 rounded-md shadow hover:bg-blue-200 flex items-center gap-1">
+        <span class="material-icons-round">mic</span>
+        <span class="label-boton">Hablar</span>
+      </button>
+      <input id="chat-input" placeholder="Escribe un mensaje..." class="flex-1 p-2 border border-gray-300 rounded-md" />
+      <button id="btn-enviar" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600">Enviar</button>
+    </div>
+  </div>
+</main>
+
+<footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
+    <nav class="flex justify-around items-center px-4 py-2">
+      <a class="flex flex-col items-center justify-center gap-0.5 text-[#b2d0e5] p-2 rounded-md hover:bg-gray-100 transition-colors" href="index.html">
+        <img src="img/inicio.png" alt="Inicio" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-xs font-medium">Inicio</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="frases.html">
+        <img src="img/frases.png" alt="Frases" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-xs font-medium">Frases</span>
+      </a>
+      <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
+        <img src="img/ajustes.png" alt="Ajustes" class="w-10 h-10 object-contain mr-2" />
+        <span class="text-xs font-medium">Ajustes</span>
+      </button>
+    </nav>
+    <div class="h-safe-area-bottom bg-white"></div> 
+  </footer>
+
+<!-- Modal de ajustes -->
+<div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-bold text-blue-700">Ajustes</h2>
+      <button id="cerrar-ajustes" class="text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
+    </div>
+    <form id="form-ajustes" class="flex flex-col gap-4">
+      <label class="flex flex-col gap-1">
+        <span class="text-sm font-medium text-gray-700">Nombre</span>
+        <input id="nombre-usuario" type="text" class="border rounded-md p-2" />
+      </label>
+      <div>
+        <span class="text-sm font-medium text-gray-700">Género</span>
+        <div class="flex gap-4 mt-1">
+          <label><input type="radio" name="genero-ajustes" value="masculino" checked /> Masculino</label>
+          <label><input type="radio" name="genero-ajustes" value="femenino" /> Femenino</label>
+        </div>
+      </div>
+      <div>
+        <span class="text-sm font-medium text-gray-700">Voz</span>
+        <div id="lista-voces" class="flex flex-col gap-2 mt-1"></div>
+      </div>
+      <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Guardar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const synth = window.speechSynthesis;
+
+  const btnPlayPause = document.getElementById("btn-playpause");
+  const btnDetener = document.getElementById("btn-detener");
+  const btnBorrar = document.getElementById("btn-borrar");
+  const textarea = document.getElementById("texto");
+  let reproduciendo = false;
+  let pausado = false;
+  let utterance = null;
+
+  if (btnPlayPause) {
+    btnPlayPause.addEventListener("click", () => {
+      const texto = textarea.value.trim();
+      if (!texto) return;
+
+      if (pausado) {
+        synth.resume();
+        pausado = false;
+        reproduciendo = true;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "pause";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Pausar";
+        return;
+      }
+
+      if (reproduciendo) {
+        synth.pause();
+        pausado = true;
+        reproduciendo = false;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Reanudar";
+        return;
+      }
+
+      synth.cancel();
+      // Usa la función hablar para respetar la voz configurada
+      let utterance = new SpeechSynthesisUtterance(texto);
+      const vozURI = localStorage.getItem('voz-preferencia-uri');
+      function getVozPorURI(uri) {
+        const voices = window.speechSynthesis.getVoices();
+        return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+      }
+      const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+      utterance.lang = "es-ES";
+      if (vozElegida) utterance.voice = vozElegida;
+      utterance.onstart = () => {
+        reproduciendo = true;
+        pausado = false;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "pause";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Pausar";
+      };
+      utterance.onend = utterance.onerror = () => {
+        reproduciendo = false;
+        pausado = false;
+        btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+        btnPlayPause.querySelector('#label-playpause').textContent = "Reproducir";
+      };
+      synth.speak(utterance);
+    });
+  }
+
+  if (btnDetener) {
+    btnDetener.addEventListener("click", () => {
+      synth.cancel();
+      reproduciendo = false;
+      pausado = false;
+      btnPlayPause.querySelector('#icon-playpause').textContent = "play_arrow";
+      btnPlayPause.querySelector('#label-playpause').textContent = "Reproducir";
+    });
+  }
+
+  if (btnBorrar && textarea) {
+    btnBorrar.addEventListener("click", () => {
+      textarea.value = "";
+    });
+  }
+
+  const btnEscuchar = document.getElementById("btn-escuchar");
+  const transcripcion = document.getElementById("transcripcion");
+  let reconocimiento;
+  let escuchando = false;
+
+  if (btnEscuchar && transcripcion) {
+    btnEscuchar.addEventListener("click", () => {
+      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+        alert("Tu navegador no soporta reconocimiento de voz.");
+        return;
+      }
+
+      if (!reconocimiento) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        reconocimiento = new SpeechRecognition();
+        reconocimiento.lang = "es-ES";
+        reconocimiento.continuous = true;
+        reconocimiento.interimResults = false;
+        reconocimiento.onresult = function(event) {
+          const resultado = event.results[event.results.length - 1][0].transcript;
+          transcripcion.textContent += resultado + " ";
+        };
+        reconocimiento.onend = () => {
+          escuchando = false;
+          btnEscuchar.querySelector("#escuchar-label").textContent = "Escuchar";
+        };
+      }
+
+      if (!escuchando) {
+        reconocimiento.start();
+        escuchando = true;
+        btnEscuchar.querySelector("#escuchar-label").textContent = "Detener";
+      } else {
+        reconocimiento.stop();
+        escuchando = false;
+        btnEscuchar.querySelector("#escuchar-label").textContent = "Escuchar";
+      }
+    });
+  }
+
+  const modoToggle = document.getElementById("modo-toggle");
+  const modoTexto = document.getElementById("modoTexto");
+  const modoChat = document.getElementById("modoChat");
+
+  modoToggle.addEventListener("change", () => {
+    if (modoToggle.checked) {
+      modoTexto.classList.add("hidden");
+      modoChat.classList.remove("hidden");
+    } else {
+      modoTexto.classList.remove("hidden");
+      modoChat.classList.add("hidden");
+    }
+  });
+
+  // CHAT
+  const chatBox = document.getElementById("chat-box");
+  const chatInput = document.getElementById("chat-input");
+  const btnEnviar = document.getElementById("btn-enviar");
+  const btnMic = document.getElementById("btn-mic");
+
+  // Cargar historial del chat al iniciar la página
+  let historial = JSON.parse(localStorage.getItem("chat-historial") || "[]");
+  historial.forEach(msg => agregarMensaje(msg.texto, msg.tipo));
+
+  // ...Borrar el historial...
+  document.getElementById("btn-borrar-historial")?.addEventListener("click", () => {
+    localStorage.removeItem("chat-historial");
+    chatBox.innerHTML = "";
+  });
+
+  function agregarMensaje(texto, tipo) {
+    const div = document.createElement("div");
+    div.className = "p-2 rounded-md max-w-[70%] " + (tipo === "user" ? "bg-blue-500 text-white self-end" : "bg-gray-200 text-black self-start");
+    div.textContent = texto;
+    div.addEventListener("click", () => hablar(texto));
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Guardar historial en localStorage
+    let historial = JSON.parse(localStorage.getItem("chat-historial") || "[]");
+    historial.push({ texto, tipo });
+    localStorage.setItem("chat-historial", JSON.stringify(historial));
+  }
+
+  // Reconocimiento de voz y compatibilidad
+  function getVozPorURI(uri) {
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+  }
+
+  function hablar(texto) {
+    const vozURI = localStorage.getItem('voz-preferencia-uri');
+    const synth = window.speechSynthesis;
+    function speakWithVoice() {
+      const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = 'es-ES';
+      if (vozElegida) mensaje.voice = vozElegida;
+      synth.speak(mensaje);
+    }
+    if (synth.getVoices().length === 0) {
+      synth.addEventListener('voiceschanged', function handler() {
+        speakWithVoice();
+        synth.removeEventListener('voiceschanged', handler);
+      });
+    } else {
+      speakWithVoice();
+    }
+  }
+
+  btnEnviar?.addEventListener("click", () => {
+    const texto = chatInput.value.trim();
+    if (texto) {
+      agregarMensaje(texto, "user");
+      hablar(texto);
+      chatInput.value = "";
+    }
+  });
+
+  btnMic?.addEventListener("click", () => {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert("Tu navegador no soporta reconocimiento de voz.");
+      return;
+    }
+    const rec = new webkitSpeechRecognition();
+    rec.lang = "es-ES";
+    rec.onresult = (event) => {
+      const texto = event.results[0][0].transcript;
+      agregarMensaje(texto, "bot");
+    };
+    rec.start();
+  });
+
+  // --- Ajustes de usuario ---
+  function renderizarVoces() {
+    const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
+    const lista = document.getElementById('lista-voces');
+    if (!lista) return;
+    lista.innerHTML = '';
+    const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
+    voices.forEach(voz => {
+      let genero = 'Desconocido';
+      const nombre = voz.name.toLowerCase();
+      if (nombre.includes('female') || nombre.includes('mujer') || nombre.includes('paulina') || nombre.includes('soledad')) genero = 'Femenina';
+      else if (nombre.includes('male') || nombre.includes('hombre') || nombre.includes('miguel') || nombre.includes('jorge')) genero = 'Masculina';
+      else if (voz.gender) genero = voz.gender === 'female' ? 'Femenina' : (voz.gender === 'male' ? 'Masculina' : 'Desconocido');
+      lista.innerHTML += `
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="voz" value="${voz.voiceURI}" class="accent-blue-500" ${voz.voiceURI === vozURISeleccionada ? 'checked' : ''} />
+          <span>${voz.name} <span class="text-xs text-gray-500">(${genero})</span></span>
+        </label>
+      `;
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Footer: Ajustes modal
+    const btnAjustes = document.getElementById('btn-ajustes');
+    const modalAjustes = document.getElementById('modal-ajustes');
+    const cerrarAjustes = document.getElementById('cerrar-ajustes');
+    const formAjustes = document.getElementById('form-ajustes');
+    const inputNombre = document.getElementById('nombre-usuario');
+
+    if (btnAjustes) {
+      btnAjustes.addEventListener('click', () => {
+        renderizarVoces();
+        if (inputNombre) inputNombre.value = localStorage.getItem('nombre-usuario') || '';
+        const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
+        const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
+        if (radioGenero) radioGenero.checked = true;
+        modalAjustes.classList.remove('hidden');
+      });
+    }
+    if (cerrarAjustes) {
+      cerrarAjustes.addEventListener('click', () => {
+        modalAjustes.classList.add('hidden');
+      });
+    }
+    if (formAjustes) {
+      formAjustes.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (inputNombre) {
+          const nombre = inputNombre.value.trim();
+          localStorage.setItem('nombre-usuario', nombre);
+        }
+        const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
+        localStorage.setItem('genero-seleccionado', genero);
+        const voz = document.querySelector('input[name="voz"]:checked');
+        if (voz) {
+          localStorage.setItem('voz-preferencia-uri', voz.value);
+        }
+        modalAjustes.classList.add('hidden');
+      });
+    }
+    const listaVoces = document.getElementById('lista-voces');
+    if (listaVoces) {
+      listaVoces.addEventListener('change', (e) => {
+        if (e.target.name === 'voz') {
+          localStorage.setItem('voz-preferencia-uri', e.target.value);
+          hablar('Esta es una voz de ejemplo.');
+        }
+      });
+    }
+    window.speechSynthesis.onvoiceschanged = () => {
+      if (modalAjustes && !modalAjustes.classList.contains('hidden')) renderizarVoces();
+    };
+
+    // Footer: Navegación
+    document.getElementById('btn-inicio')?.addEventListener('click', () => window.location.href = "index.html");
+    document.getElementById('btn-frases')?.addEventListener('click', () => window.location.href = "frases.html");
+  });
+</script>
+</body>
+</html>
