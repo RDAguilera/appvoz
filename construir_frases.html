@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Construir Frases</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <style>
+    body { min-height: 100vh; }
+    .pictograma-btn { cursor:pointer; }
+    .pictograma-btn:active { transform: scale(0.95);}
+    .frase-picto { cursor:pointer; }
+    .frase-picto:hover { outline: 2px solid #60a5fa; }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans">
+  <header class="sticky top-0 z-10 bg-white shadow-sm px-4 py-4 flex items-center justify-between">
+    <button title="VOLVER" aria-label="VOLVER"
+        onclick="window.history.back()" 
+        class="text-slate-700 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 active:bg-slate-200 transition-colors duration-200 ease-in-out">
+        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+    </button>
+    <h1 class="text-slate-900 text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-10 uppercase">Construir Frases</h1>    
+  </header>
+
+  <!-- Zona de construcción de frase -->
+  <main class="max-w-3xl mx-auto p-4">
+   <!--<section class="mb-4">
+      <div id="frase-construida" class="flex flex-wrap gap-2 p-3 bg-indigo-50 rounded min-h-[60px] shadow"></div>
+      <div class="flex gap-2 mt-2">
+        <button id="btn-reproducir-frase" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 flex items-center gap-1">
+          <span class="material-icons-round">play_arrow</span> Reproducir frase
+        </button>
+        <button id="btn-borrar-frase" class="bg-gray-300 text-gray-700 px-4 py-2 rounded shadow hover:bg-gray-400 flex items-center gap-1">
+          <span class="material-icons-round">delete</span> Borrar
+        </button>
+      </div>
+    </section>-->
+    <section class="sticky top-[72px] z-20 bg-slate-50 py-3 shadow">
+      <div id="frase-construida" class="flex flex-wrap gap-2 p-3 bg-indigo-50 rounded min-h-[60px] shadow-inner"></div>
+      <div class="flex gap-2 mt-2 px-3">
+      <button id="btn-reproducir-frase" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 flex items-center gap-1 transition">
+        <span class="material-icons-round">play_arrow</span> Reproducir frase
+      </button>
+      <button id="btn-borrar-frase" class="bg-gray-300 text-gray-700 px-4 py-2 rounded shadow hover:bg-gray-400 flex items-center gap-1 transition">
+        <span class="material-icons-round">delete</span> Borrar
+      </button>
+      </div>
+</section>
+
+
+    <!-- Palabras funcionales -->
+    <section class="mb-6">
+      <h2 class="font-semibold text-base text-indigo-700 mb-2 uppercase">Palabras para frases</h2>
+      <div class="flex flex-wrap gap-2">
+        <!-- Puedes agregar más palabras según necesidad -->
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="YO">
+          <span class="material-icons-round text-3xl text-indigo-400">person</span>
+          <span class="text-xs font-medium">ESTOY</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="QUIERO">
+          <span class="material-icons-round text-3xl text-indigo-400">star</span>
+          <span class="text-xs font-medium">QUIERO</span>
+        </button>        
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="IR">
+          <span class="material-icons-round text-3xl text-indigo-400">directions_walk</span>
+          <span class="text-xs font-medium">IR</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="A">
+          <span class="material-icons-round text-3xl text-indigo-400">A</span>
+          <span class="text-xs font-medium">A</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="CON">
+          <span class="material-icons-round text-3xl text-indigo-400">group</span>
+          <span class="text-xs font-medium">CON</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="Y">
+          <span class="material-icons-round text-3xl text-indigo-400">Y</span>
+          <span class="text-xs font-medium">Y</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="DE">
+          <span class="material-icons-round text-3xl text-indigo-400">DE</span>
+          <span class="text-xs font-medium">DE</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="UN">
+          <span class="material-icons-round text-3xl text-indigo-400">UN</span>
+          <span class="text-xs font-medium">UN</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AL">
+          <span class="material-icons-round text-3xl text-indigo-400">AL</span>
+          <span class="text-xs font-medium">AL</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MI">
+          <span class="material-icons-round text-3xl text-indigo-400">MI            
+          </span>
+          <span class="text-xs font-medium">MI</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MÁS">
+          <span class="material-icons-round text-3xl text-indigo-400">add            
+          </span>
+          <span class="text-xs font-medium">MÁS</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MUY">
+          <span class="material-icons-round text-3xl text-indigo-400">MUY            
+          </span>
+          <span class="text-xs font-medium">MUY</span>
+        </button>        
+      </div>
+    </section>
+
+    <!-- Pictogramas agrupados por categorías -->
+    <section class="mb-8">
+      <h2 class="font-semibold text-base text-indigo-700 mb-2 uppercase">Pictogramas</h2>
+      <!-- Puedes copiar y pegar los bloques de pictogramas de tus otras páginas aquí -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- Ejemplo de pictogramas, reemplaza las rutas y textos por los de tu proyecto -->
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="HOLA" data-img="img/saludos/hola.png">
+          <img src="img/saludos/hola.png" alt="HOLA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">HOLA</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="BUEN DÍA" data-img="img/saludos/buenos días.png">
+          <img src="img/saludos/buenos días.png" alt="BUEN DÍA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">BUEN DÍA</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="BUENAS TARDES" data-img="img/saludos/buenas tardes.png">
+          <img src="img/saludos/buenas tardes.png" alt="BUENAS TARDES" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">BUENAS TARDES</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="BUENAS NOCHES" data-img="img/saludos/buenas noches.png">
+          <img src="img/saludos/buenas noches.png" alt="BUENAS NOCHES" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">BUENAS NOCHES</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="SÍ" data-img="img/Respuestas/sí.png">
+        <img src="img/respuestas/sí.png" alt="SÍ" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-sm font-medium">SÍ</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="NO" data-img="img/respuestas/no.png">
+        <img src="img/respuestas/no.png" alt="NO" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-sm font-medium">NO</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="POR FAVOR" data-img="img/por favor.png">
+        <img src="img/por favor.png" alt="POR FAVOR" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-sm font-medium">POR FAVOR</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="NECESITO" data-img="img/necesidades/necesitar.png">         
+          <img src="img/necesidades/necesitar.png" alt="NECESITO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">NECESITO</span>
+        </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="YO" data-img="img/familiares/yo.png">
+        <img src="img/familiares/yo.png" alt="YO" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-sm font-medium">YO</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="FAMILIA" data-img="img/familiares/familia.png">
+        <img src="img/familiares/familia.png" alt="FAMILIA" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-sm font-medium">FAMILIA</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MAMÁ" data-img="img/familiares/mamá.png">
+        <img src="img/familiares/mamá.png" alt="MAMÁ" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-xs font-medium">MAMÁ</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="PAPÁ" data-img="img/familiares/papá.png">
+        <img src="img/familiares/papá.png" alt="PAPÁ" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-xs font-medium">PAPÁ</span>
+      </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="HERMANO" data-img="img/familiares/hermano.png">
+        <img src="img/familiares/hermano.png" alt="HERMANO" class="w-16 h-16 object-contain mb-1" />
+        <span class="text-xs font-medium">HERMANO</span>  
+      </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="HERMANA" data-img="img/familiares/hermana.png">
+          <img src="img/familiares/hermana.png" alt="HERMANA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">HERMANA</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ABUELA" data-img="img/familiares/abuela.png">
+          <img src="img/familiares/abuela.png" alt="ABUELA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ABUELA</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ABUELO" data-img="img/familiares/abuelo.png">
+          <img src="img/familiares/abuelo.png" alt="ABUELO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ABUELO</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="TÍO" data-img="img/familiares/tío.png">
+          <img src="img/familiares/tío.png" alt="TÍO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">TÍO</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="TÍA" data-img="img/familiares/tía.png">
+          <img src="img/familiares/tía.png" alt="TÍA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">TÍA</A></span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AMIGO" data-img="img/relaciones/amigo.png">
+          <img src="img/familiares/amigo.png" alt="AMIGO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">AMIGO</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AMIGA" data-img="img/relaciones/amiga.png">
+          <img src="img/familiares/amiga.png" alt="AMIGA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">AMIGA</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="PERRO" data-img="img/animales/perro.png">
+          <img src="img/familiares/amigos.png" alt="AMIGOS" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">AMIGOS</span>  
+
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AGUA" data-img="img/necesidades/agua.png">
+          <img src="img/necesidades/agua.png" alt="AGUA" class="w-16 h-16 object-contain mb-1" />
+            <span class="text-xs font-medium">AGUA</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="TENGO HAMBRE" data-img="img/necesidades/hambre.png">
+          <img src="img/necesidades/hambre.png" alt="TENGO HAMBRE" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">TENGO HAMBRE</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="BAÑO" data-img="img/necesidades/baños.png">
+          <img src="img/necesidades/baños.png" alt="BAÑO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">BAÑO</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AYUDA" data-img="img/necesidades/ayuda.png">
+          <img src="img/necesidades/ayuda.png" alt="AYUDA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">AYUDA</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="GRACIAS" data-img="img/respuestas/gracias.png">
+          <img src="img/respuestas/gracias.png" alt="GRACIAS" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">GRACIAS</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="POR FAVOR" data-img="img/respuestas/por favor.png">
+          <img src="img/necesidades/no necesito ayuda.png" alt="No necesito ayuda" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">NO NECESITO AYUDA</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="FELIZ" data-img="img/emociones/feliz.png">
+          <img src="img/emociones/feliz.png" alt="FELIZ" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">FELIZ</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="TRISTE" data-img="img/emociones/triste.png">
+          <img src="img/emociones/triste.png" alt="TRISTE" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">TRISTE</span> 
+        </button> 
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ENFADADO" data-img="img/emociones/enfadado.png">
+          <img src="img/emociones/enfadado.png" alt="ENFADADO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ENFADADO</span> 
+        </button> 
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="SORPRENDIDO" data-img="img/emociones/sorprendido.png">
+          <img src="img/emociones/sorprendido.png" alt="SORPRENDIDO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">SORPRENDIDO</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ASUSTADO" data-img="img/emociones/asustado.png">
+          <img src="img/emociones/asustado.png" alt="ASUSTADO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ASUSTADO</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="CANSADO" data-img="img/emociones/cansado.png">
+          <img src="img/emociones/cansado.png" alt="CANSADO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">CANSADO</span>  
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ABURRIDO" data-img="img/emociones/aburrido.png">
+          <img src="img/emociones/aburrido.png" alt="ABURRIDO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ABURRIDO</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ENFERMO" data-img="img/emociones/enfermo.png">
+          <img src="img/emociones/enfermo.png" alt="ENFERMO" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ENFERMO</span>  
+        </button>           
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="JUGAR" data-img="img/actividades/jugar.png">
+          <img src="img/acciones/jugar.png" alt="JUGAR" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">JUGAR</span>    
+        </button>
+      <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="COMER" data-img="img/actividades/comer.png">
+          <img src="img/necesidades/comer.png" alt="COMER" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">COMER</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="DORMIR" data-img="img/actividades/dormir.png">
+          <img src="img/acciones/dormir.png" alt="DORMIR" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">DORMIR</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="ESTUDIAR" data-img="img/actividades/estudiar.png">
+          <img src="img/acciones/estudiar.png" alt="ESTUDIAR" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">ESTUDIAR</span>
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="DEPORTES" data-img="img/actividades/deportes.png">
+          <img src="img/deportes.png" alt="DEPORTES" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">DEPORTES</span> 
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MÚSICA" data-img="img/actividades/música.png">
+          <img src="img/música.png" alt="MÚSICA" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">MÚSICA</span>   
+        </button>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="CINE" data-img="img/actividades/cine.png">
+          <img src="img/cine.png" alt="CINE" class="w-16 h-16 object-contain mb-1" />
+          <span class="text-xs font-medium">CINE</span> 
+        </button>
+
+
+        <!-- Agrega aquí todos los pictogramas de tu proyecto -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Construcción de frases
+    const fraseConstruida = [];
+    const zonaFrase = document.getElementById('frase-construida');
+    const btnReproducir = document.getElementById('btn-reproducir-frase');
+    const btnBorrar = document.getElementById('btn-borrar-frase');
+
+    // Agregar pictograma o palabra a la frase
+    document.querySelectorAll('.pictograma-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const texto = btn.dataset.texto;
+        const imgSrc = btn.dataset.img;
+        fraseConstruida.push({ texto, imgSrc });
+        renderFrase();
+      });
+    });
+
+    // Renderizar la frase construida
+    function renderFrase() {
+      zonaFrase.innerHTML = '';
+      fraseConstruida.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = "frase-picto flex flex-col items-center";
+        if (item.imgSrc) {
+          const img = document.createElement('img');
+          img.src = item.imgSrc;
+          img.className = "w-10 h-10";
+          div.appendChild(img);
+        }
+        const span = document.createElement('span');
+        span.textContent = item.texto;
+        span.className = "text-xs";
+        div.appendChild(span);
+        // Eliminar pictograma individual al hacer click
+        div.addEventListener('click', () => {
+          fraseConstruida.splice(idx, 1);
+          renderFrase();
+        });
+        zonaFrase.appendChild(div);
+      });
+    }
+
+    // Reproducir la frase completa
+    btnReproducir.addEventListener('click', () => {
+      const frase = fraseConstruida.map(item => item.texto).join(' ');
+      if (frase) hablar(frase);
+    });
+
+    // Borrar la frase
+    btnBorrar.addEventListener('click', () => {
+      fraseConstruida.length = 0;
+      renderFrase();
+    });
+
+    // Función hablar (usa la voz configurada)
+    function getVozPorURI(uri) {
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+    }
+    function hablar(texto) {
+      const vozURI = localStorage.getItem('voz-preferencia-uri');
+      const synth = window.speechSynthesis;
+      function speakWithVoice() {
+        const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+        const mensaje = new SpeechSynthesisUtterance(texto);
+        mensaje.lang = 'es-ES';
+        if (vozElegida) mensaje.voice = vozElegida;
+        synth.speak(mensaje);
+      }
+      if (synth.getVoices().length === 0) {
+        synth.addEventListener('voiceschanged', function handler() {
+          speakWithVoice();
+          synth.removeEventListener('voiceschanged', handler);
+        });
+      } else {
+        speakWithVoice();
+      }
+    }
+  </script>
+</body>
+</html>

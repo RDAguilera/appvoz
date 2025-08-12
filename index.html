@@ -31,7 +31,7 @@
     }
   }
 </style>
-<body class="bg-slate-50">
+<body class="bg-slate-50 font-sans">
 <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>
   
 <header class="sticky top-0 z-10 bg-white shadow-sm header-mobile px-4 py-4 pb-3">
@@ -156,8 +156,8 @@
         <span class="text-sm font-medium text-center">TRISTE</span>
       </button>
       <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
-        <img src="img/emociones/enfadado.png" alt="Enfadado" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium text-center">ENFADADO</span>
+        <img src="img/emociones/enfadado.png" alt="Enojado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ENOJADO</span>
       </button>
       <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
         <img src="img/emociones/sorprendido.png" alt="Sorprendido" class="w-28 h-28 object-contain mx-auto" />
@@ -170,6 +170,30 @@
       <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
         <img src="img/emociones/desanimado.png" alt="Desanimado" class="w-28 h-28 object-contain mx-auto" />
         <span class="text-sm font-medium text-center">DESANIMADO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/aburrido.png" alt="Aburrido" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ABURRIDO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/divertido.png" alt="Divertido" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">DIVERTIDO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/enamorado.png" alt="Agradecido" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">ENAMORADO</span>
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/cansado.png" alt="Cansado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">CANSADO</span>  
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/avergonzado.png" alt="Avergonzado" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">AVERGONZADO</span>  
+      </button>
+      <button class="btn-emocion flex flex-col items-center justify-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+        <img src="img/emociones/contento.png" alt="Contento" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium text-center">CONTENTO</span>  
       </button>
     </div>
   </div>
@@ -284,69 +308,243 @@
     <span class="material-icons-round transition-transform" id="icon-necesidades">expand_more</span>
   </button>
   <div id="panel-necesidades" class="transition-all duration-300 overflow-hidden" style="max-height:0;">    
+    
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/respuestas/sí.png" alt="Sí" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">SÍ</span>
+      </button>
+       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/respuestas/no.png" alt="No" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">NO</span>
+      </button>      
+       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/respuestas/no lo sé.png" alt="No lo sé" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">NO LO SÉ</span>
+      </button>
+       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/respuestas/por favor.png" alt="POR FAVOR" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">POR FAVOR</span>
+      </button>
+       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/respuestas/lo siento.png" alt="LO SIENTO" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">LO SIENTO</span>
+      </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
         <img src="img/necesidades/hambre.png" alt="Tengo hambre" class="w-28 h-28 object-contain mx-auto" />
         <span class="text-sm font-medium">TENGO HAMBRE</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/beber_agua.png" alt="TOMAR AGUA" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">TOMAR AGUA</span>
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
         <img src="img/necesidades/ayuda.png" alt="Necesito ayuda" class="w-28 h-28 object-contain mx-auto" />
         <span class="text-sm font-medium">NECESITO AYUDA</span>
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/no necesito ayuda.png" alt="NO Necesito ayuda" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">NO NECESITO AYUDA</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
         <img src="img/necesidades/baños.png" alt="Quiero ir al baño" class="w-28 h-28 object-contain mx-auto" />
         <span class="text-sm font-medium">QUIERO IR AL BAÑO</span>
       </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/estoy mal.png" alt="ESTOY MAL" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">ESTOY MAL</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/estoy bien.png" alt="ESTOY BIEN" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">ESTOY BIEN</span>
+      </button>  
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
         <img src="img/necesidades/médico.png" alt="Necesito un médico" class="w-28 h-28 object-contain mx-auto" />
         <span class="text-sm font-medium">NECESITO UN MÉDICO</span>
       </button>      
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
         <img src="img/necesidades/descansar.png" alt="Necesito descansar" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">NECESITO DESCANZAR</span>
+        <span class="text-sm font-medium">NECESITO DESCANSAR</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/tener frío.png" alt="Tengo frío" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">TENGO FRÍO</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/calor.png" alt="Tengo calor" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">TENGO CALOR</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/necesidades/bañar.png" alt="MEQUIERO BAÑAR" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">ME QUIERO BAÑAR</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+        <img src="img/acciones/dormir.png" alt="Quiero dormir" class="w-28 h-28 object-contain mx-auto" />
+        <span class="text-sm font-medium">QUIERO DORMIR</span>
       </button>
     </div>
   </div>
 </section>
 
-<!-- Respuestas Rápidas -->
+<!-- Preguntas Rápidas -->
 <section class="mb-4">
   <button type="button" class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-purple-100 text-purple-700 font-semibold text-lg mb-3 transition hover:bg-purple-200 focus:outline-none" data-toggle="collapse" data-target="#panel-respuestas">
     <span class="flex items-center">
       <img src="img/respuestas/respuesta.png" alt="Respuestas rápidas" class="w-10 h-10 object-contain mr-2" />
-      RESPUESTAS RÁPIDAS
+      PREGUNTAS
     </span>
     <span class="material-icons-round transition-transform" id="icon-respuestas">expand_more</span>
   </button>
   <div id="panel-respuestas" class="transition-all duration-300 overflow-hidden" style="max-height:0;">
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-        <img src="img/respuestas/sí.png" alt="Sí" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">SÍ</span>
+        <img src="img/respuestas/pregunta.png" alt="Cuánto" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CUÁNTO?</span>
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-        <img src="img/respuestas/no.png" alt="No" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">NO</span>
+        <img src="img/respuestas/pregunta.png" alt="Cuándo" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CUÁNDO?</span>
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-        <img src="img/respuestas/estoy bien.png" alt="Estoy bien" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">ESTOY BIEN</span>
+        <img src="img/respuestas/pregunta.png" alt="Dónde" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿DÓNDE?</span>  
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-        <img src="img/respuestas/no lo sé.png" alt="No lo sé" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">NO LO SÉ</span>
+        <img src="img/respuestas/pregunta.png" alt="Quién" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUIÉN?</span>  
       </button>
       <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-        <img src="img/necesidades/ayuda.png" alt="Ayuda" class="w-28 h-28 object-contain mx-auto" />
-        <span class="text-sm font-medium">AYUDA</span>
+        <img src="img/respuestas/pregunta.png" alt="Qué" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ?</span>  
       </button>
-</button>
-<button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
-<img src="img/respuestas/gracias.png" alt="Gracias" class="w-28 h-28 object-contain mx-auto" />
-<span class="text-sm font-medium">GRACIAS</span>
-</button>
-</div>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Por qué" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿POR QUÉ?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Para qué" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿PARA QUÉ?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Cómo" class="w-16 h-168 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CÓMO?</span> 
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Por qué no" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿POR QUÉ NO?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Para qué" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿PARA QUÉ?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Cómo se dice" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CÓMO SE DICE?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Cómo se escribe" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CÓMO SE ESCRIBE?</span>
+      </button> 
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Cómo se pronuncia" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿CÓMO SE PRONUNCIA?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué significa" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ SIGNIFICA?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué es" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ ES?</span>     
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué pasa" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ PASA?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué ocurre" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ OCURRE?</span> 
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué sucede" class="w-16 h-168 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ SUCEDE?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué necesitas" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ NECESITAS?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Te ayudo" class="w-16 h-168 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿TE AYUDO?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Puedo ir a tu casa" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿PUEDO IR A TU CASA?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Puedes venir a mi casa" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿PUEDES VENIR A MI CASA?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres decir" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES DECIR?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres saber" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES SABER?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres preguntar" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES PREGUNTAR?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres aprender" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES APRENDER?</span>   
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer ahora" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER AHORA?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer después" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER DESPUÉS?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer mañana" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER MAÑANA?</span> 
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer hoy" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER HOY?</span>  
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer esta tarde" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER ESTA TARDE?</span>   
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer esta noche" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER ESTA NOCHE?</span>
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer el fin de semana" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER EL FIN DE SEMANA?</span> 
+      </button>
+      <button class="flex flex-col items-center justify-center gap-2 rounded-xl bg-purple-500 hover:bg-purple-600 text-white p-4 py-6 shadow-md transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50">
+        <img src="img/respuestas/pregunta.png" alt="Qué quieres hacer en vacaciones" class="w-16 h-16 object-contain mx-auto" />
+        <span class="text-sm font-medium">¿QUÉ QUIERES HACER EN VACACIONES?</span>  
+      </button>
+    </div>
 </section>
+</section>
+  <p class="text-xs text-slate-500 text-center">Autor pictogramas: Sergio Palao. Origen: ARASAAC (http://www.arasaac.org). Licencia: CC (BY-NC-SA). Propiedad: Gobierno de Aragón (España)</p>
 </main>
 <footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
   <nav class="flex justify-around items-center px-4 py-2">
@@ -550,18 +748,30 @@
     masculino: [
       { texto: "ALEGRE", color: "bg-blue-500 hover:bg-blue-600" },
       { texto: "TRISTE", color: "bg-blue-500 hover:bg-blue-600" },
-      { texto: "ENFADADO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "ENJADO", color: "bg-blue-500 hover:bg-blue-600" },
       { texto: "SORPRENDIDO", color: "bg-blue-500 hover:bg-blue-600" },
       { texto: "ASUSTADO", color: "bg-blue-500 hover:bg-blue-600" },
-      { texto: "DESANIMADO", color: "bg-blue-500 hover:bg-blue-600" }
+      { texto: "DESANIMADO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "ABURRIDO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "DIVERTIDO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "ENAMORADO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "CANSADO", color: "bg-blue-500 hover:bg-blue-600" },       
+      { texto: "AVERGONZADO", color: "bg-blue-500 hover:bg-blue-600" },
+      { texto: "CONTENTO", color: "bg-blue-500 hover:bg-blue-600" }
     ],
     femenino: [
       { texto: "ALEGRE", color: "bg-pink-500 hover:bg-pink-600" },
       { texto: "TRISTE", color: "bg-pink-500 hover:bg-pink-600" },
-      { texto: "ENFADADA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "ENOJADA", color: "bg-pink-500 hover:bg-pink-600" },
       { texto: "SORPRENDIDA", color: "bg-pink-500 hover:bg-pink-600" },
       { texto: "ASUSTADA", color: "bg-pink-500 hover:bg-pink-600" },
-      { texto: "DESANIMADA", color: "bg-pink-500 hover:bg-pink-600" }
+      { texto: "DESANIMADA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "ABURRIDA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "DIVERTIDA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "ENAMORADA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "CANSADA", color: "bg-pink-500 hover:bg-pink-600" },     
+      { texto: "AVERGONZADA", color: "bg-pink-500 hover:bg-pink-600" },
+      { texto: "CONTENTA", color: "bg-pink-500 hover:bg-pink-600" }
     ]
   };
 
