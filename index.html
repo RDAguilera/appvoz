@@ -615,6 +615,10 @@
     return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
   }
   function hablar(texto) {
+       // Si todo el texto está en mayúsculas (sin contar caracteres no alfabéticos), lo pasamos a minúsculas
+    if (texto === texto.toUpperCase() && /[a-záéíóúñü]/i.test(texto)) {
+        texto = texto.toLowerCase();
+    }
     const vozURI = localStorage.getItem('voz-preferencia-uri');
     const synth = window.speechSynthesis;
     function speakWithVoice() {

@@ -85,8 +85,8 @@
           <span class="material-icons-round text-3xl text-indigo-400">DE</span>
           <span class="text-xs font-medium">DE</span>
         </button>
-        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100 uppercase" data-texto="un">
-          <span class="material-icons-round text-3xl text-indigo-400 uppercase" >un</span>
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100 uppercase" data-texto="UN">
+          <span class="material-icons-round text-3xl text-indigo-400 uppercase" >UN</span>
           <span class="text-xs font-medium">UN</span>
         </button>
         <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="AL">
@@ -103,7 +103,7 @@
           </span>
           <span class="text-xs font-medium">MÁS</span> 
         </button>
-        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="muy">
+        <button class="pictograma-btn flex flex-col items-center bg-white rounded-xl shadow px-3 py-2 hover:bg-indigo-100" data-texto="MUY">
           <span class="material-icons-round text-3xl text-indigo-400">MUY            
           </span>
           <span class="text-xs font-medium">MUY</span>
@@ -355,6 +355,10 @@
       return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
     }
     function hablar(texto) {
+        // Si todo el texto está en mayúsculas (sin contar caracteres no alfabéticos), lo pasamos a minúsculas
+      if (texto === texto.toUpperCase() && /[a-záéíóúñü]/i.test(texto)) {
+          texto = texto.toLowerCase();
+      }
       const vozURI = localStorage.getItem('voz-preferencia-uri');
       const synth = window.speechSynthesis;
       function speakWithVoice() {
