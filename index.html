@@ -32,7 +32,7 @@
   }
 </style>
 <body class="bg-slate-50 font-sans">
-<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+<!--<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root" style='font-family: Lexend, "Noto Sans", sans-serif;'>-->
   
 <header class="sticky top-0 z-10 bg-white shadow-sm header-mobile px-4 py-4 pb-3">
   <div class="flex items-center justify-between w-full">
@@ -546,7 +546,7 @@
 </section>
   <p class="text-xs text-slate-500 text-center">Autor pictogramas: Sergio Palao. Origen: ARASAAC (http://www.arasaac.org). Licencia: CC (BY-NC-SA). Propiedad: Gobierno de Aragón (España)</p>
 </main>
-<footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
+<!--<footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
   <nav class="flex justify-around items-center px-4 py-2">
     <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto_chat.html">
       <img src="img/texto-a-voz.png" alt="Habla/Escucha" class="w-10 h-10 object-contain mr-2" />
@@ -563,7 +563,27 @@
   </nav>
   <div class="h-safe-area-bottom bg-white"></div>
   <p class="text-xs text-slate-500 text-center">© 2025 Sanba Voz App. - Sanba Software - Todos los derechos reservados.</p>
+</footer>-->
+
+<footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
+  <nav class="flex justify-around items-center px-2 py-0.5 sm:px-4 sm:py-2 leading-none">
+    <a class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto_chat.html">
+      <img src="img/texto-a-voz.png" alt="Habla/Escucha" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Habla/Escucha</span>
+    </a>
+    <a class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors" href="frases.html">
+      <img src="img/frases.png" alt="Frases" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Frases</span>
+    </a>
+    <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
+      <img src="img/ajustes.png" alt="Ajustes" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Ajustes</span>
+    </button>
+  </nav>
+  <div class="h-safe-area-bottom bg-white"></div>
+  <p class="text-[0.55rem] sm:text-xs text-slate-500 text-center py-0.5">© 2025 Sanba Voz App. - Sanba Software - Todos los derechos reservados.</p>
 </footer>
+
 
 <!-- Modal de ajustes avanzado -->
 <div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
