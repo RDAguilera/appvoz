@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Evento Interactivo</title>
+  <!--<link rel="stylesheet" href="output.css">-->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-slate-50 font-sans">
+  <header class="sticky top-0 z-10 bg-white shadow-sm px-4 py-4 flex items-center justify-between">
+    <h1 class="font-bold text-lg text-indigo-700 text-center w-full">SANBA VOZ</h1>
+  </header>
+  <main class="max-w-2xl mx-auto p-4 space-y-6 pb-32">
+
+    <!-- Saludos y Presentación -->
+    <section>
+      <div class="mt-6 mb-2 flex items-center gap-2">
+        <img src="img/saludos/saludo.png" alt="Indumentaria" class="w-8 h-8 object-contain" />
+        <h3 class="text-orange-700 font-semibold text-lg">SALUDOS</h3>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+            <img src="img/saludos/buenos días.png" alt="BUEN DÍA" class="w-16 h-16 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">BUEN DÍA</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+            <img src="img/saludos/buenas tardes.png" alt="BUENAS TARDES" class="w-16 h-16 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">BUENAS TARDES</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+          <img src="img/saludos/hola.png" alt="Hola" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium text-center">¡HOLA!</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+          <img src="img/saludos/¿cómo estás.png" alt="¿Cómo estás?" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium text-center">¿CÓMO ESTÁS?</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+          <img src="img/saludos/adiós.png" alt="Adiós" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium text-center">¡ADIÓS!</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-black p-4 shadow-md">
+            <img src="img/saludos/hasta luego.png" alt="HASTA LUEGO" class="w-16 h-16 object-contain mx-auto" />
+            <span class="text-sm font-medium text-center">HASTA LUEGO</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Feria de Emprendedores -->
+    <section>
+      <h2 class="text-base font-semibold text-green-700 flex items-center gap-2 mb-2">
+        <span class="material-icons-round"></span> Feria de Emprendedores
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <!--<button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/feria/quiero_ver_productos.png" alt="Ver productos" class="w-16 h-16 object-contain" />
+          <span>Quiero ver productos</span>
+        </button>-->
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/respuestas/pregunta.png" alt="¿Cuánto cuesta?" class="w-16 h-16 object-contain" />
+          <span>¿Cuánto cuesta?</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/comprar.png" alt="Quiero comprar" class="w-16 h-16 object-contain" />
+          <span>Quiero comprar</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/respuestas/pregunta.png" alt="¿Puedo pagar con...?" class="w-16 h-16 object-contain" />
+          <span>¿Puedo pagar con...?</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/qr.png" alt="QR" class="w-16 h-16 object-contain" />
+          <span>QR</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/efectivo.png" alt="Efectivo" class="w-16 h-16 object-contain" />
+          <span>Efectivo</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/transferencia.png" alt="Transferencia" class="w-16 h-16 object-contain" />
+          <span>Transferencia</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 text-white p-4 shadow-md">
+          <img src="img/respuestas/gracias.png" alt="Gracias" class="w-16 h-16 object-contain" />
+          <span>¡Gracias!</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Juegos Infantiles -->
+    <section>
+      <h2 class="text-base font-semibold text-blue-700 flex items-center gap-2 mb-2">
+        <span class="material-icons-round"></span> Juegos Infantiles
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/jugar.png" alt="Quiero jugar" class="w-16 h-16 object-contain" />
+          <span>Quiero jugar</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/pintar.png" alt="Quiero pintar" class="w-16 h-16 object-contain" />
+          <span>Quiero pintar</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/origami.png" alt="Origami" class="w-16 h-16 object-contain" />
+          <span>Origami</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/taekwondo.png" alt="Taekwon-do" class="w-16 h-16 object-contain" />
+          <span>Taekwondo</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/subir.png" alt="¿Puedo subirme?" class="w-16 h-16 object-contain" />
+          <span>¿Puedo subirme?</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/bajar.png" alt="Quiero bajarme" class="w-16 h-16 object-contain" />
+          <span>Quiero bajarme</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/esperar.png" alt="Quiero esperar" class="w-16 h-16 object-contain" />
+          <span>Quiero esperar</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white p-4 shadow-md">
+          <img src="img/quiero_irme.png" alt="Quiero irme" class="w-16 h-16 object-contain" />
+          <span>Quiero irme</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Carros de Comida -->
+    <section>
+      <h2 class="text-base font-semibold text-red-700 flex items-center gap-2 mb-2">
+        <span class="material-icons-round"></span> Carros de Comida
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/comer.png" alt="Quiero comer" class="w-20 h-20 object-contain" />
+          <span>Quiero comer</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/beber.png" alt="Quiero beber" class="w-16 h-16 object-contain" />
+          <span>Quiero beber</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/hamburguesa.png" alt="Hamburguesa" class="w-16 h-16 object-contain" />
+          <span>Hamburguesa</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/pancho.png" alt="Pancho" class="w-16 h-16 object-contain" />
+          <span>Pancho</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/pizza.png" alt="Pizza" class="w-16 h-16 object-contain" />
+          <span>Pizza</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/papas-fritas.png" alt="Papas Fritas" class="w-16 h-16 object-contain" />
+          <span>Papas Fritas</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/gaseosa.png" alt="Gaseosa" class="w-16 h-16 object-contain" />
+          <span>Gaseosa</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/agua.png" alt="Agua" class="w-16 h-16 object-contain" />
+          <span>Agua</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/limonada.png" alt="Limonada" class="w-16 h-16 object-contain" />
+          <span>Limonada</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/helado.png" alt="Helado" class="w-16 h-16 object-contain" />
+          <span>Helado</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/sandwich_pollo-sf.png" alt="Sandwich de Pollo" class="w-16 h-16 object-contain" />
+          <span>Sandwich de Pollo</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/banana_ia_sf.png" alt="Banana" class="w-16 h-16 object-contain" />
+          <span>Banana</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/manzana.png" alt="Manzana" class="w-16 h-16 object-contain" />
+          <span>Manzana</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/pera.png" alt="Pera" class="w-16 h-16 object-contain" />
+          <span>Pera</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/naranja.png" alt="Naranja" class="w-16 h-16 object-contain" />
+          <span>Naranja</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/barra_cereales.png" alt="Barra de Cereal" class="w-16 h-16 object-contain" />
+          <span>Barra de Cereal</span>
+        </button>
+
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-red-500 hover:bg-red-600 text-white p-4 shadow-md">
+          <img src="img/alimentos/budin.png" alt="Budín" class="w-16 h-16 object-contain" />
+          <span>Budín</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Ayuda y Emergencias -->
+    <section>
+      <h2 class="text-base font-semibold text-gray-700 flex items-center gap-2 mb-2">
+        <span class="material-icons-round"></span> Ayuda y Emergencias
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/ayuda.png" alt="Necesito ayuda" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">NECESITO AYUDA</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/no necesito ayuda.png" alt="NO Necesito ayuda" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">NO NECESITO AYUDA</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/baños.png" alt="Quiero ir al baño" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">QUIERO IR AL BAÑO</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/estoy mal.png" alt="ESTOY MAL" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">ESTOY MAL</span>
+        </button>
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/estoy bien.png" alt="ESTOY BIEN" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">ESTOY BIEN</span>
+        </button>  
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/médico.png" alt="Necesito un médico" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">NECESITO UN MÉDICO</span>
+        </button>      
+        <button class="flex flex-col items-center gap-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-black p-4 shadow-md">
+          <img src="img/necesidades/descansar.png" alt="Necesito descansar" class="w-16 h-16 object-contain mx-auto" />
+          <span class="text-sm font-medium">NECESITO DESCANSAR</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+  <script>
+function getVozPorURI(uri) {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+}
+function hablar(texto) {
+  // Si todo el texto está en mayúsculas (sin contar caracteres no alfabéticos), lo pasamos a minúsculas
+  if (texto === texto.toUpperCase() && /[a-záéíóúñü]/i.test(texto)) {
+    texto = texto.toLowerCase();
+  }
+  const vozURI = localStorage.getItem('voz-preferencia-uri');
+  const synth = window.speechSynthesis;
+  // Recupera tono y velocidad si los tienes configurados
+  const tono = parseFloat(localStorage.getItem('voz-tono') || "1");
+  const velocidad = parseFloat(localStorage.getItem('voz-velocidad') || "1");
+  const volumen = parseFloat(localStorage.getItem('voz-volumen') || "1");
+  function speakWithVoice() {
+    const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+    const mensaje = new SpeechSynthesisUtterance(texto);
+    mensaje.lang = 'es-ES';
+    if (vozElegida) mensaje.voice = vozElegida;
+    mensaje.pitch = tono;
+    mensaje.rate = velocidad;
+    mensaje.volume = volumen;
+    synth.speak(mensaje);
+  }
+  if (synth.getVoices().length === 0) {
+    synth.addEventListener('voiceschanged', function handler() {
+      speakWithVoice();
+      synth.removeEventListener('voiceschanged', handler);
+    });
+  } else {
+    speakWithVoice();
+  }
+}
+
+// Asigna hablar() a todos los botones de pictogramas
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('button').forEach(btn => {
+    const texto = btn.querySelector('span')?.textContent;
+    if (texto) {
+      btn.addEventListener('click', () => {
+        hablar(texto);
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
