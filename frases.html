@@ -1,356 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>Frases</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+  <title>Frases</title>
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" href="output.css">
+  <!--<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
+  <style>
     .phrase-item:hover {
-      background-color: #f0f4f8;}
-    .phrase-item:active {
-      background-color: #e0e8f0;}
-    .play-button:hover {
-      color: #b2d0e5;}
-    .play-button:active {
-      color: #9cb8cc;}
-    .nav-item-active {
-      color: #b2d0e5;font-weight: 700;
+      background-color: #f0f4f8;
     }
+
+    .phrase-item:active {
+      background-color: #e0e8f0;
+    }
+
+    .play-button:hover {
+      color: #b2d0e5;
+    }
+
+    .play-button:active {
+      color: #9cb8cc;
+    }
+
+    .nav-item-active {
+      color: #b2d0e5;
+      font-weight: 700;
+    }
+
     .nav-item-active svg {
       fill: #b2d0e5;
     }
   </style>
-<style>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#b2d0e5" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b2d0e5" />
 </head>
+
 <body class="bg-slate-50">
-<!--<div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>-->
+  <!--<div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>-->
   <div class="flex-grow overflow-y-auto pb-24">
-    <header class="sticky top-0 z-10 flex items-center bg-white px-4 py-4 pb-3 shadow-sm justify-between w-full max-w-md mx-auto md:max-w-none md:mx-0">
-      <button title="VOLVER" aria-label="VOLVER"
-        onclick="window.history.back()" 
+    <header
+      class="sticky top-0 z-10 flex items-center bg-white px-4 py-4 pb-3 shadow-sm justify-between w-full max-w-md mx-auto md:max-w-none md:mx-0">
+      <button title="VOLVER" aria-label="VOLVER" onclick="window.history.back()"
         class="text-slate-700 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 active:bg-slate-200 transition-colors duration-200 ease-in-out">
         <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+          <path
+            d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+          </path>
         </svg>
       </button>
       <h1 class="text-slate-900 text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-10">FRASES</h1>
       <!-- Botón a la derecha -->
       <div>
-      <a href="construir_frases.html" title="CREAR FRASES" aria-label="CREAR FRASES"
+        <a href="construir_frases.html" title="CREAR FRASES" aria-label="CREAR FRASES"
           class="ml-4 text-indigo-600 flex size-10 items-center justify-center rounded-full hover:bg-indigo-50 transition">
           <span class="material-icons-round text-2xl" id="icon-expandir-todo">add_circle_outline</span>
-      </a>
+        </a>
       </div>
     </header>
-<main class="px-4 pt-6 w-full max-w-md mx-auto md:max-w-none md:mx-0 md:px-16">
-<section class="mb-8">
-<h2 class="text-slate-800 text-2xl font-semibold leading-tight tracking-tight mb-4">Saludos</h2>
-<div class="divide-y divide-slate-100 rounded-lg border border-slate-200 bg-white shadow-sm">
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">¡Hola! ¿Cómo estás?</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Buenos días</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Buenas tardes</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Buenas noches</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-</div>
-</section>
-<section class="mb-8">
-<h2 class="text-slate-800 text-2xl font-semibold leading-tight tracking-tight mb-4">Preguntas Básicas</h2>
-<div class="divide-y divide-slate-100 rounded-lg border border-slate-200 bg-white shadow-sm">
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">¿Cómo te llamas?</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">¿Dónde está el baño?</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">¿Cuánto cuesta esto?</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">¿Puedes ayudarme?</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-</div>
-</section>
-<section class="mb-8">
-<h2 class="text-slate-800 text-2xl font-semibold leading-tight tracking-tight mb-4">Agradecimientos</h2>
-<div class="divide-y divide-slate-100 rounded-lg border border-slate-200 bg-white shadow-sm">
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Muchas gracias</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">De nada</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Lo aprecio</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-<div class="phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150">
-<p class="text-slate-700 text-base font-medium leading-normal flex-1">Eres muy amable</p>
-<button class="play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
-</svg>
-</button>
-</div>
-</div>
-</section>
-</main>
+    <main class="px-4 pt-6 w-full max-w-md mx-auto md:max-w-none md:mx-0 md:px-16" id="main-content">
+      <div id="frases-container" class="space-y-8 pb-8">
+        <!-- Las frases se cargarán dinámicamente aquí -->
+      </div>
+    </main>
   </div>
-  <!--<footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
-    <nav class="flex justify-around items-center px-4 py-2">
-      <a class="flex flex-col items-center justify-center gap-0.5 text-[#b2d0e5] p-2 rounded-md hover:bg-gray-100 transition-colors" href="index.html">
-        <img src="img/inicio.png" alt="Inicio" class="w-10 h-10 object-contain mr-2" />
-        <span class="text-xs font-medium">Inicio</span>
+  <footer
+    class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
+    <nav class="flex justify-around items-center px-2 py-0.5 sm:px-4 sm:py-2 leading-none">
+      <a class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors"
+        href="index.html">
+        <img src="img/inicio.png" alt="Inicio" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+        <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Inicio</span>
       </a>
-      <a class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto_chat.html">
-        <img src="img/texto-a-voz.png" alt="Habla/Escucha" class="w-10 h-10 object-contain mr-2" />
-        <span class="text-xs font-medium">Habla/Escucha</span>
+      <a class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors"
+        href="texto_chat.html">
+        <img src="img/texto-a-voz.png" alt="Habla/Escucha" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+        <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Habla/Escucha</span>
       </a>
-      <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0.5 text-[#6a7781] p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
-        <img src="img/ajustes.png" alt="Ajustes" class="w-10 h-10 object-contain mr-2" />
-        <span class="text-xs font-medium">Ajustes</span>
+      <button id="btn-ajustes"
+        class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
+        <img src="img/ajustes.png" alt="Ajustes" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
+        <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Ajustes</span>
       </button>
     </nav>
-    <div class="h-safe-area-bottom bg-white"></div> 
-  </footer>-->
-
-  <footer class="fixed bottom-0 left-0 z-50 bg-white border-t border-[#f1f2f4] shadow-t-sm w-full max-w-md mx-auto md:max-w-none md:mx-0">
-  <nav class="flex justify-around items-center px-2 py-0.5 sm:px-4 sm:py-2 leading-none">
-    <a class="flex flex-col items-center justify-center gap-0 text-[#b2d0e5] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors" href="index.html">
-      <img src="img/inicio.png" alt="Inicio" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
-      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Inicio</span>
-    </a>
-    <a class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors" href="texto_chat.html">
-      <img src="img/texto-a-voz.png" alt="Habla/Escucha" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
-      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Habla/Escucha</span>
-    </a>
-    <button id="btn-ajustes" class="flex flex-col items-center justify-center gap-0 text-[#6a7781] p-0.5 sm:p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
-      <img src="img/ajustes.png" alt="Ajustes" class="w-6 h-6 sm:w-10 sm:h-10 object-contain" />
-      <span class="text-[0.6rem] sm:text-xs font-medium mt-0.5">Ajustes</span>
-    </button>
-  </nav>
-  <div class="h-safe-area-bottom bg-white"></div>
-</footer>
+    <div class="h-safe-area-bottom bg-white"></div>
+    <p class="text-[0.55rem] sm:text-xs text-slate-500 text-center py-0.5">© 2025 Sanba Voz App. - Sanba Software -
+      Todos los derechos reservados.</p>
+  </footer>
 
   <!-- Modal de ajustes avanzado -->
-  <div id="modal-ajustes" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-  <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-lg font-bold text-blue-700">Ajustes</h2>
-      <button id="cerrar-ajustes" class="text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
-    </div>
-    <form id="form-ajustes" class="flex flex-col gap-4">
-      <label class="flex flex-col gap-1">
-        <span class="text-sm font-medium text-gray-700">Nombre</span>
-        <input id="nombre-usuario" type="text" class="border rounded-md p-2" />
-      </label>
-      <div>
-        <span class="text-sm font-medium text-gray-700">Género</span>
-        <div class="flex gap-4 mt-1">
-          <label><input type="radio" name="genero-ajustes" value="masculino" checked /> Masculino</label>
-          <label><input type="radio" name="genero-ajustes" value="femenino" /> Femenino</label>
+  <div id="modal-ajustes" class="fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-40 hidden">
+    <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md"
+      style="max-height: 90vh; display: flex; flex-direction: column; overflow: hidden;">
+      <div class="flex justify-between items-center mb-4" style="flex-shrink: 0;">
+        <h2 class="text-lg font-bold text-blue-700">Ajustes</h2>
+        <button id="cerrar-ajustes" class="text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
+      </div>
+      <form id="form-ajustes" class="flex flex-col gap-4"
+        style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;">
+        <div class="pr-2" style="overflow-y: auto; flex: 1;">
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-medium text-gray-700">Nombre</span>
+            <input id="nombre-usuario" type="text" class="border rounded-md p-2" />
+          </label>
+          <div class="mt-4">
+            <span class="text-sm font-medium text-gray-700">Género</span>
+            <div class="flex gap-4 mt-1">
+              <label><input type="radio" name="genero-ajustes" value="masculino" checked /> Masculino</label>
+              <label><input type="radio" name="genero-ajustes" value="femenino" /> Femenino</label>
+            </div>
+          </div>
+          <div class="mt-4">
+            <span class="text-sm font-medium text-gray-700">Voz</span>
+            <div id="lista-voces" class="flex flex-col gap-2 mt-1"></div>
+          </div>
         </div>
-      </div>
-      <div>
-        <span class="text-sm font-medium text-gray-700">Voz</span>
-        <div id="lista-voces" class="flex flex-col gap-2 mt-1"></div>
-      </div>
-      <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Guardar</button>
-    </form>
+        <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          style="flex-shrink: 0;">Guardar</button>
+      </form>
+    </div>
   </div>
-</div>
-<!--</div>-->
+  <!--</div>-->
 
-<script>
-  // Utilidad para obtener la voz seleccionada por voiceURI
-  function getVozPorURI(uri) {
-    const voices = window.speechSynthesis.getVoices();
-    return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
-  }
-  function hablar(texto) {
-       // Si todo el texto está en mayúsculas (sin contar caracteres no alfabéticos), lo pasamos a minúsculas
-    if (texto === texto.toUpperCase() && /[a-záéíóúñü]/i.test(texto)) {
+  <script>
+    // Utilidad para obtener la voz seleccionada por voiceURI
+    function getVozPorURI(uri) {
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.voiceURI === uri) || voices.find(v => v.lang.startsWith('es')) || voices[0];
+    }
+    function hablar(texto) {
+      // Si todo el texto está en mayúsculas (sin contar caracteres no alfabéticos), lo pasamos a minúsculas
+      if (texto === texto.toUpperCase() && /[a-záéíóúñü]/i.test(texto)) {
         texto = texto.toLowerCase();
-    }
-    const vozURI = localStorage.getItem('voz-preferencia-uri');
-    const synth = window.speechSynthesis;
-    function speakWithVoice() {
-      const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
-      const mensaje = new SpeechSynthesisUtterance(texto);
-      mensaje.lang = 'es-ES';
-      if (vozElegida) mensaje.voice = vozElegida;
-      synth.speak(mensaje);
-    }
-    if (synth.getVoices().length === 0) {
-      synth.addEventListener('voiceschanged', function handler() {
+      }
+      const vozURI = localStorage.getItem('voz-preferencia-uri');
+      const synth = window.speechSynthesis;
+      function speakWithVoice() {
+        const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
+        const mensaje = new SpeechSynthesisUtterance(texto);
+        mensaje.lang = 'es-ES';
+        if (vozElegida) mensaje.voice = vozElegida;
+        synth.speak(mensaje);
+      }
+      if (synth.getVoices().length === 0) {
+        synth.addEventListener('voiceschanged', function handler() {
+          speakWithVoice();
+          synth.removeEventListener('voiceschanged', handler);
+        });
+      } else {
         speakWithVoice();
-        synth.removeEventListener('voiceschanged', handler);
-      });
-    } else {
-      speakWithVoice();
+      }
     }
-  }
-  // --- Ajustes de usuario: voz, género y nombre ---
-  function renderizarVoces() {
-    const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
-    const lista = document.getElementById('lista-voces');
-    if (!lista) return;
-    lista.innerHTML = '';
-    const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
-    voices.forEach(voz => {
-      let genero = 'Desconocido';
-      const nombre = voz.name.toLowerCase();
-      if (nombre.includes('female') || nombre.includes('mujer') || nombre.includes('paulina') || nombre.includes('soledad')) genero = 'Femenina';
-      else if (nombre.includes('male') || nombre.includes('hombre') || nombre.includes('miguel') || nombre.includes('jorge')) genero = 'Masculina';
-      else if (voz.gender) genero = voz.gender === 'female' ? 'Femenina' : (voz.gender === 'male' ? 'Masculina' : 'Desconocido');
-      lista.innerHTML += `
+    // --- Ajustes de usuario: voz, género y nombre ---
+    function renderizarVoces() {
+      const voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
+      const lista = document.getElementById('lista-voces');
+      if (!lista) return;
+      lista.innerHTML = '';
+      const vozURISeleccionada = localStorage.getItem('voz-preferencia-uri');
+      voices.forEach(voz => {
+        let genero = 'Desconocido';
+        const nombre = voz.name.toLowerCase();
+        if (nombre.includes('female') || nombre.includes('mujer') || nombre.includes('paulina') || nombre.includes('soledad')) genero = 'Femenina';
+        else if (nombre.includes('male') || nombre.includes('hombre') || nombre.includes('miguel') || nombre.includes('jorge')) genero = 'Masculina';
+        else if (voz.gender) genero = voz.gender === 'female' ? 'Femenina' : (voz.gender === 'male' ? 'Masculina' : 'Desconocido');
+        lista.innerHTML += `
         <label class="flex items-center gap-2 cursor-pointer">
           <input type="radio" name="voz" value="${voz.voiceURI}" class="accent-blue-500" ${voz.voiceURI === vozURISeleccionada ? 'checked' : ''} />
           <span>${voz.name} <span class="text-xs text-gray-500">(${genero})</span></span>
         </label>
       `;
-    });
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    // Asociar evento a cada botón de reproducción
-    document.querySelectorAll('.phrase-item').forEach(item => {
-      const boton = item.querySelector('.play-button');
-      const frase = item.querySelector('p')?.innerText.trim();
+      });
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      // Datos de frases (Fuente: FASES_FUENTES.TXT)
+      const frasesData = {
+        "Saludos y cortesía": [
+          "Hola, ¿cómo estás?",
+          "Buenos días.",
+          "Buenas tardes.",
+          "Buenas noches.",
+          "Por favor.",
+          "Gracias.",
+          "De nada.",
+          "Perdón.",
+          "Disculpa, ¿puedes ayudarme?",
+          "Mucho gusto.",
+          "Hasta luego.",
+          "Que tengas un buen día."
+        ],
+        "Expresiones básicas de necesidad": [
+          "Necesito ayuda.",
+          "Tengo hambre.",
+          "Tengo sed.",
+          "Estoy cansado.",
+          "No me siento bien.",
+          "Necesito ir al baño.",
+          "Tengo frío.",
+          "Tengo calor.",
+          "Me duele algo.",
+          "Necesito descansar."
+        ],
+        "Conversación general": [
+          "Sí.",
+          "No.",
+          "No sé.",
+          "Está bien.",
+          "Está mal.",
+          "Entiendo.",
+          "No entiendo.",
+          "Por favor, repite.",
+          "Habla más despacio, por favor.",
+          "¿Qué hora es?",
+          "¿Dónde estamos?",
+          "¿Puedo ayudarte con algo?"
+        ],
+        "Situaciones sociales": [
+          "¿Cómo te llamas?",
+          "Me llamo...",
+          "¿Dónde estás?",
+          "¿Qué estás haciendo?",
+          "¿Puedo acompañarte?",
+          "¿Quieres hacer algo juntos?",
+          "Me gusta.",
+          "No me gusta.",
+          "¡Qué bonito!",
+          "¡Eso es interesante!"
+        ],
+        "En casa": [
+          "¿Podrías traerme agua, por favor?",
+          "¿Qué hay de comer?",
+          "¿Puedes encender la luz?",
+          "¿Puedes apagar la luz?",
+          "¿Dónde está...?",
+          "Estoy en mi habitación.",
+          "Necesito cargar mi celular.",
+          "¿Puedes poner música?",
+          "Voy a descansar un rato."
+        ],
+        "Transporte y desplazamiento": [
+          "¿Dónde está la parada de autobús?",
+          "Necesito un taxi.",
+          "¿Cuánto cuesta el pasaje?",
+          "¿Puedes indicarme cómo llegar?",
+          "¿Estamos cerca?",
+          "Voy hacia mi casa.",
+          "Por favor, espera un momento."
+        ],
+        "Compras y comida": [
+          "¿Cuánto cuesta?",
+          "Quiero comprar esto.",
+          "¿Tienen esto en otro color?",
+          "¿Aceptan tarjeta de crédito?",
+          "Necesito una bolsa, por favor.",
+          "Me gustaría un vaso de agua.",
+          "Quiero algo de comer.",
+          "¿Qué platos tienen?",
+          "Sin azúcar, por favor.",
+          "¿Tiene gluten?"
+        ],
+        "Emergencias": [
+          "Llama a alguien, por favor.",
+          "Estoy perdido.",
+          "Llama al 911.",
+          "Necesito un médico.",
+          "Me siento muy mal.",
+          "¿Puedes llamar a mi familia?",
+          "Hay peligro aquí.",
+          "Aléjate, por favor.",
+          "Ayuda, por favor."
+        ],
+        "Trabajo o estudio": [
+          "¿Qué debo hacer?",
+          "Necesito más tiempo.",
+          "¿Puedes explicármelo otra vez?",
+          "No estoy seguro de cómo hacer esto.",
+          "Terminé mi tarea.",
+          "¿Puedes revisarlo?",
+          "Necesito tomar notas.",
+          "¿Cuándo es la próxima reunión?"
+        ],
+        "Frases de ánimo o emociones": [
+          "Estoy feliz.",
+          "Estoy triste.",
+          "Estoy enojado.",
+          "Estoy nervioso.",
+          "Estoy emocionado.",
+          "No te preocupes.",
+          "Todo estará bien.",
+          "Gracias por entenderme.",
+          "Me haces feliz.",
+          "Estoy orgulloso de ti."
+        ]
+      };
 
-      if (boton && frase) {
-        boton.addEventListener('click', (e) => {
-          e.stopPropagation(); // evita que se propague a otros eventos
-          hablar(frase);
+      // Icono de play SVG para reutilizar
+      const playIconSVG = `
+        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+          <path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
+        </svg>
+      `;
 
-          // Efecto de resaltado visual
-          boton.classList.add('ring-2', 'ring-blue-400');
-          setTimeout(() => {
-            boton.classList.remove('ring-2', 'ring-blue-400');
-          }, 500);
+      function renderFrases() {
+        const container = document.getElementById('frases-container');
+        if (!container) return;
+        container.innerHTML = '';
+
+        for (const [categoria, frases] of Object.entries(frasesData)) {
+          const section = document.createElement('section');
+          section.className = "mb-8";
+
+          const title = document.createElement('h2');
+          title.className = "text-slate-800 text-2xl font-semibold leading-tight tracking-tight mb-4";
+          title.textContent = categoria;
+          section.appendChild(title);
+
+          const listDiv = document.createElement('div');
+          listDiv.className = "divide-y divide-slate-100 rounded-lg border border-slate-200 bg-white shadow-sm";
+
+          frases.forEach(frase => {
+            const item = document.createElement('div');
+            item.className = "phrase-item flex items-center gap-4 px-4 py-3.5 justify-between cursor-pointer transition-colors duration-150 hover:bg-slate-50";
+
+            // Texto
+            const p = document.createElement('p');
+            p.className = "text-slate-700 text-base font-medium leading-normal flex-1";
+            p.textContent = frase;
+            item.appendChild(p);
+
+            // Botón
+            const btn = document.createElement('button');
+            btn.className = "play-button shrink-0 text-slate-500 p-2 rounded-full transition-colors duration-150 hover:text-blue-400";
+            btn.innerHTML = playIconSVG;
+            item.appendChild(btn);
+
+            // Evento click en todo el item (o solo botón, pero el diseño original sugiere item completo interactivo)
+            // En el original el listener estaba en el botón, pero el item tenía cursor pointer. 
+            // Vamos a ponerlo en el item completo para mejor UX, o mantener comportamiento original.
+            // El original tenía listener en el botón.
+
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              let textoHablar = frase;
+
+              // Lógica especial para nombre
+              if (frase.toLowerCase().startsWith("me llamo")) {
+                const nombre = localStorage.getItem('nombre-usuario');
+                if (nombre && nombre.trim() !== "") {
+                  // Reemplaza "..." si existe, o concatena
+                  textoHablar = "Me llamo " + nombre;
+                }
+              }
+
+              hablar(textoHablar);
+
+              // Efecto visual
+              btn.classList.add('text-blue-600');
+              setTimeout(() => btn.classList.remove('text-blue-600'), 500);
+            });
+
+            // También permitir click en la fila para reproducir
+            item.addEventListener('click', () => btn.click());
+
+            listDiv.appendChild(item);
+          });
+
+          section.appendChild(listDiv);
+          container.appendChild(section);
+        }
+      }
+
+      renderFrases();
+
+      // Modal y ajustes (Mismo código que antes)
+      const btnAjustes = document.getElementById('btn-ajustes');
+      const modalAjustes = document.getElementById('modal-ajustes');
+      const cerrarAjustes = document.getElementById('cerrar-ajustes');
+      const formAjustes = document.getElementById('form-ajustes');
+      const inputNombre = document.getElementById('nombre-usuario');
+      const listaVoces = document.getElementById('lista-voces');
+
+      // Asegura que los elementos existen antes de asignar eventos
+      if (btnAjustes && modalAjustes && cerrarAjustes && formAjustes && inputNombre && listaVoces) {
+        btnAjustes.addEventListener('click', () => {
+          renderizarVoces();
+          inputNombre.value = localStorage.getItem('nombre-usuario') || '';
+          const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
+          const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
+          if (radioGenero) radioGenero.checked = true;
+          modalAjustes.classList.remove('hidden');
+          modalAjustes.classList.add('flex');
         });
+
+        cerrarAjustes.addEventListener('click', () => {
+          modalAjustes.classList.add('hidden');
+          modalAjustes.classList.remove('flex');
+        });
+
+        formAjustes.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const nombre = inputNombre.value.trim();
+          localStorage.setItem('nombre-usuario', nombre);
+          const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
+          localStorage.setItem('genero-seleccionado', genero);
+          const voz = document.querySelector('input[name="voz"]:checked');
+          if (voz) {
+            localStorage.setItem('voz-preferencia-uri', voz.value);
+          }
+          modalAjustes.classList.add('hidden');
+        });
+
+        listaVoces.addEventListener('change', (e) => {
+          if (e.target.name === 'voz') {
+            localStorage.setItem('voz-preferencia-uri', e.target.value);
+            hablar('Esta es una voz de ejemplo.');
+          }
+        });
+
+        window.speechSynthesis.onvoiceschanged = () => {
+          if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
+        };
       }
     });
-
-    // Modal y ajustes
-    const btnAjustes = document.getElementById('btn-ajustes');
-    const modalAjustes = document.getElementById('modal-ajustes');
-    const cerrarAjustes = document.getElementById('cerrar-ajustes');
-    const formAjustes = document.getElementById('form-ajustes');
-    const inputNombre = document.getElementById('nombre-usuario');
-    const listaVoces = document.getElementById('lista-voces');
-
-    // Asegura que los elementos existen antes de asignar eventos
-    if (btnAjustes && modalAjustes && cerrarAjustes && formAjustes && inputNombre && listaVoces) {
-      btnAjustes.addEventListener('click', () => {
-        renderizarVoces();
-        inputNombre.value = localStorage.getItem('nombre-usuario') || '';
-        const genero = localStorage.getItem('genero-seleccionado') || 'masculino';
-        const radioGenero = document.querySelector(`input[name="genero-ajustes"][value="${genero}"]`);
-        if (radioGenero) radioGenero.checked = true;
-        modalAjustes.classList.remove('hidden');
-      });
-
-      cerrarAjustes.addEventListener('click', () => {
-        modalAjustes.classList.add('hidden');
-      });
-
-      formAjustes.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const nombre = inputNombre.value.trim();
-        localStorage.setItem('nombre-usuario', nombre);
-        const genero = document.querySelector('input[name="genero-ajustes"]:checked').value;
-        localStorage.setItem('genero-seleccionado', genero);
-        const voz = document.querySelector('input[name="voz"]:checked');
-        if (voz) {
-          localStorage.setItem('voz-preferencia-uri', voz.value);
-        }
-        modalAjustes.classList.add('hidden');
-      });
-
-      listaVoces.addEventListener('change', (e) => {
-        if (e.target.name === 'voz') {
-          localStorage.setItem('voz-preferencia-uri', e.target.value);
-          hablar('Esta es una voz de ejemplo.');
-        }
-      });
-
-      window.speechSynthesis.onvoiceschanged = () => {
-        if (!modalAjustes.classList.contains('hidden')) renderizarVoces();
-      };
-    }
-  });
-</script>
+  </script>
 </body>
+
 </html>
