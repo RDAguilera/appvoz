@@ -1,17 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.html",
-    "./home.html",
-    "./frases.html",
-    "./texto.html",
-    "./texto_chat.html",
-    "./construir_frases.html",
+    "./*.html",
     "./carson/*.html"
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // strategy 'class': solo afecta a elementos con clases form-* (form-input, etc.)
+    // y no cambia el estilo base de los formularios en las demás páginas.
+    require('@tailwindcss/forms')({ strategy: 'class' }),
+  ],
 }
-

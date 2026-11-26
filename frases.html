@@ -151,8 +151,9 @@
       function speakWithVoice() {
         const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
         const mensaje = new SpeechSynthesisUtterance(texto);
-        mensaje.lang = 'es-ES';
+        mensaje.lang = 'es-AR';
         if (vozElegida) mensaje.voice = vozElegida;
+        synth.cancel(); // corta la frase anterior para no encolar voces
         synth.speak(mensaje);
       }
       if (synth.getVoices().length === 0) {

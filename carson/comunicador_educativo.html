@@ -7,9 +7,9 @@
   <meta name="description"
     content="Comunicador Educativo para facilitar la comunicación en el aula. Incluye saludos, emociones, espacios escolares y más." />
   <title>Comunicador Educativo</title>
-  <!--<link rel="stylesheet" href="../output.css">-->
+  <link rel="stylesheet" href="../output.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!--<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
 </head>
 <style>
   body {
@@ -1043,8 +1043,9 @@
       function speakWithVoice() {
         const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
         const mensaje = new SpeechSynthesisUtterance(texto);
-        mensaje.lang = 'es-ES';
+        mensaje.lang = 'es-AR';
         if (vozElegida) mensaje.voice = vozElegida;
+        synth.cancel(); // corta la frase anterior para no encolar voces
         synth.speak(mensaje);
       }
 

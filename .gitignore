@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Copias de respaldo y archivos viejos (no son parte de la app publicada)
+*.rar
+*.zip
+*_Old.*
+* (1).*
+_originales_img/
+
+# Sistema operativo / editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.claude/settings.local.json

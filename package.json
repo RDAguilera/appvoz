@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./output.css",
+    "watch:css": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "build:css:prod": "npx tailwindcss -i ./input.css -o ./output.css --minify",
+    "sw:imagenes": "node scripts/generar-lista-imagenes.js",
+    "build": "npm run build:css:prod && npm run sw:imagenes"
+  }
+}
