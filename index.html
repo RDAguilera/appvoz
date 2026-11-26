@@ -1110,8 +1110,9 @@
       function speakWithVoice() {
         const vozElegida = vozURI ? getVozPorURI(vozURI) : (synth.getVoices().find(v => v.lang.startsWith('es')) || synth.getVoices()[0]);
         const mensaje = new SpeechSynthesisUtterance(texto);
-        mensaje.lang = 'es-ES';
+        mensaje.lang = 'es-AR';
         if (vozElegida) mensaje.voice = vozElegida;
+        synth.cancel(); // corta la frase anterior para no encolar voces
         synth.speak(mensaje);
       }
       if (synth.getVoices().length === 0) {
@@ -1240,7 +1241,7 @@
       masculino: [
         { texto: "ALEGRE", color: "bg-blue-500 hover:bg-blue-600" },
         { texto: "TRISTE", color: "bg-blue-500 hover:bg-blue-600" },
-        { texto: "ENJADO", color: "bg-blue-500 hover:bg-blue-600" },
+        { texto: "ENOJADO", color: "bg-blue-500 hover:bg-blue-600" },
         { texto: "SORPRENDIDO", color: "bg-blue-500 hover:bg-blue-600" },
         { texto: "ASUSTADO", color: "bg-blue-500 hover:bg-blue-600" },
         { texto: "DESANIMADO", color: "bg-blue-500 hover:bg-blue-600" },
